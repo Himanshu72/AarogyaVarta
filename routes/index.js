@@ -10,4 +10,8 @@ router.get('/temp', function(req, res, next) {
   res.render('temp', { title: 'template' });
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login', { title: 'login',data:{} });
+});
+
 module.exports = router;
