@@ -36,3 +36,24 @@ a {
   transform: scale(1.1);
   background-color: #33909b;
 }
+
+.perbtn {
+  color: white;
+  border: none;
+  padding-bottom: 0.5%;
+  font-size: 1em;
+  background: #33909b;
+  cursor: pointer;
+  transition: 1 all ease;
+  background: #4cb8c4 !important; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #3cd3ad,
+    #4cb8c4
+  ) !important; /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #3cd3ad,
+    #4cb8c4
+  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

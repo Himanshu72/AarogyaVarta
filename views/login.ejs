@@ -15,22 +15,20 @@
   </head>
   <body>
     <%-include('common/navbar')-%>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md">
-          <form class="formcls" method="post" action="/login">
+    <div class="container-fluid" style="padding: 5%">
+      <div class="row" style="margin-top: 3%">
+        <div class="col-md-5">
+          <form method="post" action="/login">
             <div class="mainheading">
               <h1>Log In</h1>
             </div>
 
             <div class="form-outline mb-4">
               <input
-                type="text"
-                minlength="3"
-                maxlength="15"
+                type="email"
                 id="email"
                 class="form-control"
-                name="username"
+                name="email"
                 required
               />
               <label class="form-label" for="email">Username</label>
@@ -53,16 +51,7 @@
               </div>
             </div>
 
-            <button
-              type="submit"
-              class="btn-block mb-4 mybutton"
-              style="
-                color: white;
-                height: 40px;
-                border-radius: 20px;
-                cursor: pointer;
-              "
-            >
+            <button type="submit" class="btn-block mb-4 mybutton perbtn">
               Log In
             </button>
 
@@ -74,10 +63,11 @@
             </div>
           </form>
         </div>
-        <div class="col-md">
+        <div class="col-md-7">
           <img src="/images/login.svg" class="img-fluid" alt="..." />
         </div>
       </div>
     </div>
+    <%- include('common/footer'); %>
   </body>
 </html>
