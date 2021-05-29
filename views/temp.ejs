@@ -5,8 +5,9 @@
 
     <%- include('common/links'); %>
   </head>
+
   <body>
-    <%- include('common/navbar'); %>
+  <%- include('common/navbar',auth:data.auth); %>
     <div class="container">Test 1</div>
     <%- include('common/footer'); %>
   </body>

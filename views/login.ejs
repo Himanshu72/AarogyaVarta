@@ -13,8 +13,9 @@
 
     <link href="/stylesheets/login_style.css" rel="stylesheet" />
   </head>
+
   <body>
-    <%-include('common/navbar')-%>
+  <%- include('common/navbar',auth:data.auth); %>
     <div class="container-fluid" style="padding: 5%">
       <div class="row" style="margin-top: 3%">
         <div class="col-md-5">

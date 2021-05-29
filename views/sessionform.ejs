@@ -5,8 +5,9 @@
 
     <%- include('common/links'); %>
 </head>
+
 <body>
-<%- include('common/navbar'); %>
+<%- include('common/navbar',auth:data.auth); %>
 <div class="card m-2">
     <div class="card-body">
         <h5 class="m-3" class="card-title">Create New Session</h5>
