@@ -63,7 +63,7 @@ router.get('/profile',auth ,function(req, res, next) {
 
 router.get('/registration',unauth ,function(req, res, next) {
   switch(req.query.code){
-    case 1:
+    case "1":
       res.render('reg', { title: 'registration',data:{auth:false},alert:{title:"ERROR!",msg:"Something Went Wrong",type:"error"} }); 
     default:
       res.render('reg', { title: 'registration',data:{auth:false},alert:{title:"",msg:"",type:""} });
