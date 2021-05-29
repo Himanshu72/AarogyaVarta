@@ -17,28 +17,28 @@
                 <div class="col col-md-6">
                     <div class="row">
                         <label class="m-2 col-md-4 col-sm-12" for="session_topic">Topic: </label>
-                        <input class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
+                        <input name="topic" class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
                     </div>
 
                     <div class="row">
                         <label class="m-2 col-md-4 col-sm-12 col-12" for="session_desc">Description: </label>
-                        <textarea class="m-2 col-md-6 col-sm-12" type="text" id="session_desc"></textarea>
+                        <textarea name="description" class="m-2 col-md-6 col-sm-12" type="text" id="session_desc"></textarea>
                     </div>
 
                     <div class="row">
                         <label class="m-2 col-md-4 col-sm-12" for="session_topic"
                         >Youtube Link:
                         </label>
-                        <input class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
+                        <input name="session" class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
                     </div>
 
                     <div class="row">
                         <label class="m-2 col-md-4 col-sm-12" for="file">Upload Prescription </label>
 
-                        <input
-                                type="file"
-                                class="btn btn-outline-secondary m-2 col-md-6 col-sm-12"
-                                id="file"/>
+                        <input name="prescription"
+                               type="file"
+                               class="btn btn-outline-secondary m-2 col-md-6 col-sm-12"
+                               id="file"/>
                     </div>
                 </div>
                 <div class="col col-md-6">
@@ -50,11 +50,10 @@
             <label class="col-md-4 col-sm-12" for="session_topic">Age Group: </label>
             <div class="row m-2">
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="0 - 1 Months ( Neonates )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         0 - 1 Months ( Neonates )
@@ -62,11 +61,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="1 Month - 2 years ( Infants )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         1 Month - 2 years ( Infants )
@@ -74,11 +72,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="2 - 12 Years ( Children )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         2 - 12 Years ( Children )
@@ -86,11 +83,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="13 - 18 Years ( Adulterants )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         13 - 18 Years ( Adulterants )
@@ -98,11 +94,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="19 - 30 Years ( Young Adults )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         19 - 30 Years ( Young Adults )
@@ -110,11 +105,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="31 -60 Years ( Adults )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         31 -60 Years ( Adults )
@@ -122,11 +116,10 @@
                 </div>
 
                 <div class="form-check col-md-4 col-sm-8">
-                    <input
-                            class="form-check-input"
-                            type="radio"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                    <input name="age"
+                           class="form-check-input"
+                           type="radio"
+                           value="Above 60 ( Senior Adults )"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Above 60 ( Senior Adults )</label
@@ -140,8 +133,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Cancer
@@ -152,8 +144,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Chronic kidney disease
@@ -164,8 +155,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Chronic lung diseases
@@ -176,8 +166,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Asthma
@@ -188,8 +177,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         interstitial lung disease
@@ -200,8 +188,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Cystic fibrosis
@@ -212,8 +199,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Dementia
@@ -224,8 +210,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Pulmonary hypertension
@@ -236,8 +221,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Diabetes
@@ -248,8 +232,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Down syndrome
@@ -260,8 +243,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Heart conditions
@@ -272,8 +254,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         HIV infection
@@ -284,8 +265,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Uncompromised state
@@ -296,8 +276,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Liver disease
@@ -308,8 +287,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Overweight and obesity
@@ -320,8 +298,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Pregnancy
@@ -332,8 +309,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Stroke
@@ -344,8 +320,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Solid organ
@@ -356,8 +331,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="comborbidities"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Sickle cell disease
@@ -372,8 +346,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Headache
@@ -384,8 +357,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Fever
@@ -396,8 +368,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Body pain
@@ -408,8 +379,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Cough
@@ -420,8 +390,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Diarrhea
@@ -432,8 +401,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Nasal Congestion
@@ -444,8 +412,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Tiredness
@@ -456,8 +423,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Sore Throat
@@ -468,8 +434,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Persistent pain
@@ -480,8 +445,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Trouble Breathing
@@ -492,8 +456,7 @@
                     <input
                             class="form-check-input"
                             type="checkbox"
-                            name="flexRadioDefault"
-                            id="flexRadioDefault1"
+                            name="Symptons"
                     />
                     <label class="form-check-label" for="flexRadioDefault1">
                         Stay Awake
