@@ -7,9 +7,9 @@ let session= new Schema({
     session:{type:String},
     startage:{type:Number},
     endage:{type:Number},
-    comborbidities:[{type:string}],
-    Symptons:[{type:string}],
-    meet:[{type:string}],
+    comborbidities:[{type:String}],
+    Symptons:[{type:String}],
+    meet:[{type:String}],
     docID:{type:String}
 
 });
