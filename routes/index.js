@@ -65,4 +65,8 @@ router.post("/reg",async (req,res)=>{
   }
 });
 
+router.get('/udashboard/:id', function(req, res, next) {
+  res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
+});
+
 module.exports = router;
