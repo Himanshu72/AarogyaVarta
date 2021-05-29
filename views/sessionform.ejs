@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+
+    <%- include('common/links'); %>
+  </head>
+  <body>
+    <%- include('common/navbar'); %>
+    <div class="card m-2">
+      <div class="card-body">
+        <h5 class="m-3" class="card-title">Create New Session</h5>
+
+        <form style="padding: 2%">
+          <div class="row">
+            <div class="col col-md-6">
+              <br /><br />
+              <label class="m-2 col-2" for="session_topic">Topic: </label>
+              <input class="m-2" type="text" id="session_topic" /><br />
+
+              <label class="m-2 col-2" for="session_desc">Description: </label>
+              <textarea class="m-2" type="text" id="session_desc"></textarea
+              ><br />
+
+              <label class="m-2 col-2" for="session_topic"
+                >Youtube Link:
+              </label>
+              <input class="m-2" type="text" id="session_topic" /><br />
+
+              <label class="m-2 col-2" for="file">Upload Prescription </label>
+
+              <input
+                type="file"
+                class="btn btn-outline-secondary m-2"
+                id="file"
+              />
+            </div>
+            <div class="col col-md-6">
+              <img src="/images/dash.svg" alt="img" class="img-fluid" />
+            </div>
+          </div>
+          <br />
+
+          <label class="m-2 col-2" for="session_topic">Age Group: </label><br />
+          <div class="row m-2">
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                0 - 1 Months ( Neonates )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                1 Month - 2 years ( Infants )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                2 - 12 Years ( Children )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                13 - 18 Years ( Adulterants )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                19 - 30 Years ( Young Adults )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                31 -60 Years ( Adults )
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Above 60 ( Senior Adults )</label
+              >
+            </div>
+          </div>
+
+          <label class="m-2 col-2" for="session_topic">Comorbidity: </label
+          ><br />
+          <div class="row m-2">
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Diabetics
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Chronic Lung Disease
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                ...
+              </label>
+            </div>
+          </div>
+
+          <label class="m-2 col-2" for="session_topic">Symptoms: </label><br />
+          <div class="row m-2">
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Headache
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Fever
+              </label>
+            </div>
+
+            <div class="form-check col-4">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                ...
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="row"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <button type="button" class="btn btn-outline-secondary m-4 col-6">
+              <i class="fas fa-plus"></i> Create Session
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <%- include('common/footer'); %>
+  </body>
+</html>
+<!--
+background: #4CB8C4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #3CD3AD, #4CB8C4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #3CD3AD, #4CB8C4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+-->
