@@ -47,7 +47,7 @@ mongoose.connect(env.db, {
       },
       findUserByID:async(obj)=>{
           try{
-           let res =await docModel.findOne({email:obj.emal});
+           let res =await docModel.findOne({email:obj.email});
             return res;
           }catch(err){
             throw err;

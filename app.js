@@ -13,20 +13,15 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+app.set('trust proxy', 1) 
 app.use(logger('dev'));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('trust proxy', 1) // trust first proxy
-app.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}))
+
  app.use(
   fileUpload({
     limits: { fileSize: 50 * 1024 * 1024 },
@@ -35,6 +30,11 @@ app.use(session({
     tempFileDir: path.join(__dirname, './public/data/'),
   }),
 );
+app.use(session({
+  resave: false,
+  saveUninitialized: true,
+  secret: "anyrandomstring"
+}));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
