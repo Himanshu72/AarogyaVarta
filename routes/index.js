@@ -20,4 +20,8 @@ router.get('/dashboard/:id', function(req, res, next) {
 router.get('/previous/:id', function(req, res, next) {
   res.render('prev', { title: 'Previous Sessions',data:{} });
 });
+router.get('/create', function(req, res, next) {
+  res.render('sessionform', { title: 'session',data:{} });
+});
+
 module.exports = router;
