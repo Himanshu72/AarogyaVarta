@@ -30,6 +30,7 @@
             </div>
             <br />
             <div class="row">
+                <%if(data.sessions.length > 0){%>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
@@ -145,11 +146,12 @@
                         
 
                         </p>
-                            <button type="button" onclick="btn(this)" data-sis="3" data-mdb-toggle="modal"
+                            <button type="button" onclick="btn(this)" data-sis="60b27877dc348e4738122d1f" data-mdb-toggle="modal"
                             data-mdb-target="#exampleModal" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Shedule New Meet</button>
                         </div>
                     </div>
                 </div>
+                <%}%>
             </div>
         </div>
 
@@ -171,7 +173,7 @@
           aria-label="Close"
         ></button>
       </div>
-      <form action="/meet/1" id="mform" >
+      <form action="/meet/1" id="mform" method="POST">
       <div class="modal-body">
         <div class="form-outline"  >
             <input type="text" name="link" placeholder="Enter Meet Link"  />
