@@ -117,4 +117,8 @@ router.get('/usession', function(req, res, next) {
 router.get('/uregistration', function(req, res, next) {
   res.render('ureg', { title: 'registration',data:{auth:true} });
 });
+
+router.get('/uprofile',function(req, res, next) {
+    res.render('uprofile', { title: 'profile',data:{auth:true} });
+});
 module.exports = router;
