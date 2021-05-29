@@ -100,7 +100,7 @@ router.get('/create', auth, function(req, res, next) {
   
 });
 router.get('/profile',auth ,function(req, res, next) {
-  res.render('profile', { title: 'profile',data:{auth:true} });
+  res.render('profile', { title: 'profile',data:{auth:true,user:req.session.user} });
 });
 
 router.get('/registration',unauth ,function(req, res, next) {
@@ -124,7 +124,7 @@ router.post("/reg",async (req,res)=>{
   console.log(req.files);
   req.body.name={};
     req.body.name.fname=req.body.fname;
-    req.body.name.fname=req.body.lname;
+    req.body.name.lname=req.body.lname;
     let username="d"+req.body.phone
     req.files.proof.mv(path.join(__dirname, '../public/data/', username+"proof"), (err) => {
       if (err) throw err;
