@@ -80,7 +80,7 @@ mongoose.connect(env.db, {
     },
     async addMeet(sid,meetid){
       try{
-           sessModel.updateOne({_id:sid},{meets:{$addToSet:meetid}});
+           await sessModel.updateOne({_id:sid},{$addToSet:{meet:meetid}});
       }catch(err){
         throw err;
       }

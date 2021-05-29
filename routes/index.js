@@ -70,7 +70,15 @@ router.get('/dashboard/:id', auth,checkdash,async function(req, res, next) {
           }
     });
     let fullmeets= await db.getMeets(meets);
-    res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:fullmeets,sessions:sessions},alert:{type:"",msg:"",title:""} });
+    switch(req.query.code){
+      case "1":
+        throw 1;
+      case "2":
+        res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:fullmeets,sessions:sessions},alert:{type:"success",msg:"Meet Scheduled",title:"Great!"} });  
+      default:
+        res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:fullmeets,sessions:sessions},alert:{type:"",msg:"",title:""} });
+    }
+    
   }catch(err){
    console.log(err); 
    res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:[],sessions:[]},alert:{type:"error",msg:"Something Went Wrong",title:"ERROR!"} });
@@ -183,10 +191,13 @@ router.post("/createsession",auth,async (req,res)=>{
 router.post("/meet/:sid",auth,async (req,res)=>{
       try{
           let meet=await db.insertMeet(req.body);
+         console.log("meet",meet);
           await db.addMeet(req.params.sid,meet._id);
+          console.log("met///");
+          res.redirect(`/dashboard/${req.session.user._id}/?code=2`);
       }catch(err){
         console.log(err);
-        res.redirect(`/dashboard/${req.sesssion.user._id}/?code=1`);
+        res.redirect(`/dashboard/${req.session.user._id}/?code=1`);
       }
 });
 
