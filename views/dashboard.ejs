@@ -14,8 +14,9 @@
     <%- include('common/links'); %>
 </head>
 
+
 <body>
-    <%- include('common/navbar'); %>
+<%- include('common/navbar',{auth:data.auth}); %>
         <div class="container-fluid">
             <div class="row" style="margin-top: 1%">
                 <div class="col col-md-12">
