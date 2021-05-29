@@ -23,5 +23,8 @@ router.get('/previous/:id', function(req, res, next) {
 router.get('/create', function(req, res, next) {
   res.render('sessionform', { title: 'session',data:{} });
 });
+router.get('/profile', function(req, res, next) {
+  res.render('profile', { title: 'profile',data:{} });
+});
 
 module.exports = router;
