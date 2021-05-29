@@ -18,6 +18,17 @@ unauth=(req,res,next)=>{
       next();   
 }
 
+checkdash=(req,res,next)=>{
+    if(req.session.user._id==req.params.id)
+          next()
+    else{
+      let i=req.originalUrl.lastIndexOf("/");
+     let route=req.originalUrl.substring(1,i);
+      
+      res.redirect(`/${route}/${req.session.user._id}`);    
+    }  
+}
+
 /* GET home page. */
 router.get('/', async function(req, res, next) {
  
@@ -48,14 +59,27 @@ router.get('/login',unauth ,function(req, res, next) {
     
 });
 
-router.get('/dashboard/:id', auth,function(req, res, next) {
-  res.render('dashboard', { title: 'dashboard',data:{auth:true} });
+router.get('/dashboard/:id', auth,checkdash,async function(req, res, next) {
+  try{
+  res.render('dashboard', { title: 'dashboard',data:{auth:true},alert:{type:"",msg:"",title:""} });
+  }catch(err){
+   console.log(err); 
+   res.render('dashboard', { title: 'dashboard',data:{auth:true},alert:{type:"error",msg:"Something Went Wrong",title:"ERROR!"} });
+  }
 });
-router.get('/previous/:id',auth, function(req, res, next) {
+router.get('/previous/:id',auth,checkdash, function(req, res, next) {
   res.render('prev', { title: 'Previous Sessions',data:{auth:true} });
 });
 router.get('/create', auth, function(req, res, next) {
-  res.render('sessionform', { title: 'session',data:{auth:true} });
+  switch(req.query.code){
+      case "1":
+        res.render('sessionform', { title: 'session',data:{auth:true},alert:{title:"GREAT!",msg:"session created",type:"success"} });
+      case "2":
+        res.render('sessionform', { title: 'session',data:{auth:true},alert:{title:"ERROR!",msg:"Something Went Wrong",type:"error"} });
+      default :    
+      res.render('sessionform', { title: 'session',data:{auth:true},alert:{title:"",msg:"",type:""} });
+  }
+  
 });
 router.get('/profile',auth ,function(req, res, next) {
   res.render('profile', { title: 'profile',data:{auth:true} });
@@ -129,6 +153,23 @@ router.post("/login",async (req,res)=>{
         console.log(data);
 });
 
+router.post("/createsession",auth,async (req,res)=>{
+      
+  try{
+  console.log(req.body);
+  req.body.docID=req.session.user._id;
+   let data=await db.insertSession(req.body);  
+   req.files.prescription.mv(path.join(__dirname, '../public/data/', data._id+".pdf"), (err) => {
+    if (err) throw err;
+  });
+  await db.updatePrescription(data._id); 
+  res.redirect("/create?code=1")
+  }
+  catch(err){
+    console.log(err);
+    res.redirect("/create?code=2")
+  }
+});
 
 router.get('/usession', function(req, res, next) {
   res.render('userenroledsession', { title: 'session',data:{auth:true} });

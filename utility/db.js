@@ -52,5 +52,39 @@ mongoose.connect(env.db, {
           }catch(err){
             throw err;
           }
+      },
+     async  updatePrescription(id){
+      try{  
+      await sessModel.updateOne({_id:id},{prescription:id+".pdf"});
+      }catch(err){
+        throw err;
+      } 
+    },
+
+    async getSessions(docid){
+      try{
+      let data =await sessModel.find({docID:docid});
+        return data;
+    }
+      catch(err){
+        throw err;
+      } 
+    },
+    async getMeets(ids){
+        try{
+          let meets=await meetModel.find({_id:{$in:ids}});
+          return meets;
+        }catch(err){
+          throw err;
+        }
+    },
+    async addMeet(sid,meetid){
+      try{
+           sessModel.updateOne({_id:sid},{meets:{$addToSet:meetid}});
+      }catch(err){
+        throw err;
       }
+    }
+
+      
   }

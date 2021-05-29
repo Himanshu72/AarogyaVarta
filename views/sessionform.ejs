@@ -1,493 +1,558 @@
 <!DOCTYPE html>
 <html lang="">
-<head>
+  <head>
     <title><%= title %></title>
 
     <%- include('common/links'); %>
-</head>
+  </head>
 
-<body>
-<%- include('common/navbar',{auth:data.auth}); %>
-<div class="card m-2">
-    <div class="card-body">
+  <body>
+    <%- include('common/navbar',{auth:data.auth}); %>
+    <div class="card m-2">
+      <div class="card-body">
         <h5 class="m-3" class="card-title">Create New Session</h5>
 
-        <form class="p-5">
-            <div class="row">
-                <div class="col col-md-6">
-                    <div class="row">
-                        <label class="m-2 col-md-4 col-sm-12" for="session_topic">Topic: </label>
-                        <input name="topic" class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
-                    </div>
+        <form
+          class="p-5"
+          action="/createsession"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <div class="row">
+            <div class="col col-md-6">
+              <div class="row">
+                <label class="m-2 col-md-4 col-sm-12" for="session_topic"
+                  >Topic:
+                </label>
+                <input
+                  name="topic"
+                  class="m-2 col-md-6 col-sm-12"
+                  type="text"
+                  id="session_topic"
+                />
+              </div>
 
-                    <div class="row">
-                        <label class="m-2 col-md-4 col-sm-12 col-12" for="session_desc">Description: </label>
-                        <textarea name="description" class="m-2 col-md-6 col-sm-12" type="text" id="session_desc"></textarea>
-                    </div>
+              <div class="row">
+                <label class="m-2 col-md-4 col-sm-12 col-12" for="session_desc"
+                  >Description:
+                </label>
+                <textarea
+                  name="description"
+                  class="m-2 col-md-6 col-sm-12"
+                  type="text"
+                  id="session_desc"
+                ></textarea>
+              </div>
 
-                    <div class="row">
-                        <label class="m-2 col-md-4 col-sm-12" for="session_topic"
-                        >Youtube Link:
-                        </label>
-                        <input name="session" class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
-                    </div>
+              <div class="row">
+                <label class="m-2 col-md-4 col-sm-12" for="session_topic"
+                  >Youtube Link:
+                </label>
+                <input
+                  name="session"
+                  class="m-2 col-md-6 col-sm-12"
+                  type="text"
+                  id="session_topic"
+                />
+              </div>
 
-                    <div class="row">
-                        <label class="m-2 col-md-4 col-sm-12" for="file">Upload Prescription </label>
+              <div class="row">
+                <label class="m-2 col-md-4 col-sm-12" for="file"
+                  >Upload Prescription
+                </label>
 
-                        <input name="prescription"
-                               type="file"
-                               class="btn btn-outline-secondary m-2 col-md-6 col-sm-12"
-                               id="file"/>
-                    </div>
-                </div>
-                <div class="col col-md-6">
-                    <img src="/images/dash.svg" alt="img" class="img-fluid"/>
-                </div>
+                <input
+                  name="prescription"
+                  type="file"
+                  class="btn btn-outline-secondary m-2 col-md-6 col-sm-12"
+                  id="file"
+                />
+              </div>
             </div>
-            <br/>
+            <div class="col col-md-6">
+              <img src="/images/dash.svg" alt="img" class="img-fluid" />
+            </div>
+          </div>
+          <br />
 
-            <label class="col-md-4 col-sm-12" for="session_topic">Age Group: </label>
-            <div class="row m-2">
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="0M-1M"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        0 - 1 Months ( Neonates )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="2M-2Y"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        2 Months - 2 years ( Infants )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="3Y-12y"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        3 - 12 Years ( Children )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="13Y-18Y"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        13 - 18 Years ( Adulterants )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="19Y-30Y"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        19 - 30 Years ( Young Adults )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="31Y-60Y"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        31 -60 Years ( Adults )
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-8">
-                    <input name="age"
-                           class="form-check-input"
-                           type="radio"
-                           value="60Y-*"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Above 60 ( Senior Adults )</label
-                    >
-                </div>
+          <label class="col-md-4 col-sm-12" for="session_topic"
+            >Age Group:
+          </label>
+          <div class="row m-2">
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="0M-1M"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                0 - 1 Months ( Neonates )
+              </label>
             </div>
 
-            <label class="m-2 col-md-4 col-sm-12" for="session_topic">Comorbidity: </label>
-            <div class="row m-2">
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Cancer"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Cancer
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Chronic Kidney Disease"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Chronic Kidney Disease
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Chronic Lung Diseases"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Chronic Lung Diseases
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Asthma"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Asthma
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Interstitial Lung Disease"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Interstitial Lung Disease
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Cystic Fibrosis"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Cystic Fibrosis
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Dementia"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Dementia
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Pulmonary Hypertension"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Pulmonary Hypertension
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Diabetes"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Diabetes
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Down Syndrome"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Down Syndrome
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Heart Conditions"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Heart Conditions
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="HIV Infection"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        HIV Infection
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Uncompromised State"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Uncompromised State
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Liver Disease"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Liver Disease
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Overweight And Obesity"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Overweight And Obesity
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Pregnancy"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Pregnancy
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Stroke"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Stroke
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Solid Organ"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Solid Organ
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="comborbidities" value="Sickle Cell Disease"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sickle Cell Disease
-                    </label>
-                </div>
-
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="2M-2Y"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                2 Months - 2 years ( Infants )
+              </label>
             </div>
 
-            <label class="m-2 col-md-4 col-sm-12" for="session_topic">Symptoms: </label>
-            <div class="row m-2">
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Headache"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Headache
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Fever"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Fever
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Body Pain"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Body Pain
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Cough"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Cough
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Diarrhea"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Diarrhea
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Nasal Congestion"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Nasal Congestion
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Tiredness"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Tiredness
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Sore Throat"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Sore Throat
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Persistent Chest Pain"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Persistent Chest Pain
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Trouble Breathing"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Trouble Breathing
-                    </label>
-                </div>
-
-                <div class="form-check col-md-4 col-sm-6">
-                    <input
-                            class="form-check-input"
-                            type="checkbox"
-                            name="Symptons"
-                            value="Insomnia"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Insomnia
-                    </label>
-                </div>
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="3Y-12y"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                3 - 12 Years ( Children )
+              </label>
             </div>
 
-            <div
-                    class="row"
-                    style="display: flex; align-items: center; justify-content: center">
-                <button type="button" class="btn btn-outline-secondary m-4 col-6">
-                    <i class="fas fa-plus"></i> Create Session
-                </button>
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="13Y-18Y"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                13 - 18 Years ( Adulterants )
+              </label>
             </div>
+
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="19Y-30Y"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                19 - 30 Years ( Young Adults )
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="31Y-60Y"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                31 -60 Years ( Adults )
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-8">
+              <input
+                name="age"
+                class="form-check-input"
+                type="radio"
+                value="60Y-*"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Above 60 ( Senior Adults )</label
+              >
+            </div>
+          </div>
+
+          <label class="m-2 col-md-4 col-sm-12" for="session_topic"
+            >Comorbidity:
+          </label>
+          <div class="row m-2">
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Cancer"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Cancer
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Chronic Kidney Disease"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Chronic Kidney Disease
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Chronic Lung Diseases"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Chronic Lung Diseases
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Asthma"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Asthma
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Interstitial Lung Disease"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Interstitial Lung Disease
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Cystic Fibrosis"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Cystic Fibrosis
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Dementia"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Dementia
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Pulmonary Hypertension"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Pulmonary Hypertension
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Diabetes"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Diabetes
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Down Syndrome"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Down Syndrome
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Heart Conditions"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Heart Conditions
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="HIV Infection"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                HIV Infection
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Uncompromised State"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Uncompromised State
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Liver Disease"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Liver Disease
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Overweight And Obesity"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Overweight And Obesity
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Pregnancy"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Pregnancy
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Stroke"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Stroke
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Solid Organ"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Solid Organ
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="comborbidities"
+                value="Sickle Cell Disease"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Sickle Cell Disease
+              </label>
+            </div>
+          </div>
+
+          <label class="m-2 col-md-4 col-sm-12" for="session_topic"
+            >Symptoms:
+          </label>
+          <div class="row m-2">
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Headache"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Headache
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Fever"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Fever
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Body Pain"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Body Pain
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Cough"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Cough
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Diarrhea"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Diarrhea
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Nasal Congestion"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Nasal Congestion
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Tiredness"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Tiredness
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Sore Throat"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Sore Throat
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Persistent Chest Pain"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Persistent Chest Pain
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Trouble Breathing"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Trouble Breathing
+              </label>
+            </div>
+
+            <div class="form-check col-md-4 col-sm-6">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="Symptons"
+                value="Insomnia"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Insomnia
+              </label>
+            </div>
+          </div>
+
+          <div
+            class="row"
+            style="display: flex; align-items: center; justify-content: center"
+          >
+            <button class="btn btn-outline-secondary m-4 col-6">
+              <i class="fas fa-plus"></i> Create Session
+            </button>
+          </div>
         </form>
+      </div>
     </div>
-</div>
 
-<%- include('common/footer'); %>
-</body>
+    <%- include('common/footer'); %>
+    <script>
+         <%if(alert.type!=""){%>
+      swal("<%=alert.title%>", "<%=alert.msg%>", "<%=alert.type%>");
+      <%}%>
+    </script>
+  </body>
 </html>
 <!--
 background: #4CB8C4;  /* fallback for old browsers */
