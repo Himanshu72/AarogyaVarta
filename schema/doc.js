@@ -17,8 +17,7 @@ let doc= new Schema({
     MRN:{type:String},
     proof:{type:String},
     photo:{type:String},
-    sign:{type:String},
-    proof:{type:String}
+    sign:{type:String}
 });
 
 module.exports=doc;

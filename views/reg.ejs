@@ -9,7 +9,126 @@
     <%- include('common/navbar'); %>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6"></div>
+        <div class="col-md-6">
+          <form>
+            <div class="row">
+              <div class="col-sm-12 m-2">
+                <h6 class="mb-0">Name</h6>
+              </div>
+              <input class="col-sm-5 m-2 editable" name="fname" value="Kenneth" disabled="" placeholder="First"/>
+              <input class="col-sm-5 m-2 editable" name="lname" value="Valdez" disabled="" placeholder="Last"/>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Gender</h6>
+              </div>
+              <select name="gender" class="col-sm-3 m-2 editable" disabled>
+                <option>Male</option>
+                <option>Female</option>
+              </select>
+
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">DOB</h6>
+              </div>
+              <input name="DOB" type="date" class="col-sm-3 m-2 editable" disabled/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Qualification</h6>
+              </div>
+              <input name="qualification" class="col-sm-5 m-2 editable" value="Qualification" disabled=""
+                     placeholder="First"/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Specialization</h6>
+              </div>
+              <input name="specialization" class="col-sm-5 m-2 editable" value="Specialization" disabled=""
+                     placeholder="First"/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Hospital / Clinic</h6>
+              </div>
+              <textarea name="hospital" class="col-sm-8 m-2 editable" disabled="" placeholder="First"></textarea>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Experience</h6>
+              </div>
+              <input name="Experiance" class="col-sm-5 m-2 editable" value="2+ Yrs" disabled="" placeholder="First"/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-5 m-2">
+                <h6 class="mb-0">Phone</h6>
+              </div>
+              <div class="col-sm-5 m-2">
+                <h6 class="mb-0">Mobile</h6>
+              </div>
+
+            </div>
+            <div class="row">
+              <input name="phone" class="col-sm-5 m-2 editable" value="(239) 816-9029" disabled=""
+                     placeholder="First"/>
+              <input name="phone" class="col-sm-5 m-2 editable" value="(320) 380-4539" disabled=""
+                     placeholder="First"/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <input name="email" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                     placeholder="First"/>
+            </div>
+            <hr>
+
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <textarea name="address" class="col-sm-8 m-2 editable" disabled
+                        placeholder="First"> Bay Area, San Francisco, CA </textarea>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-3 m-2">
+                <h6 class="mb-0">Medical Registration Number</h6>
+              </div>
+              <input name="MRN" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                     placeholder="First"/>
+            </div>
+            <hr>
+
+            <div class="row">
+              <div class="col-sm-2 m-2">
+                <h6 class="mb-0">ID Proof</h6>
+              </div>
+              <input name="proof" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                     placeholder="First"/>
+            </div>
+            <div class="row" style="display: flex;justify-content: flex-end;">
+              <div class="col-5">
+                <button type="button" class="perbtn" onclick="allowEditing();"> Edit</button>
+                <button class="perbtn" onclick="disallowEditing()"> Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
         <div class="col-md-6"></div>
       </div>
     </div>
