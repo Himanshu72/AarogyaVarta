@@ -31,8 +31,8 @@ checkdash=(req,res,next)=>{
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
- 
-  res.redirect("/login");
+
+    res.render('index', { title: 'home',data:{auth:true} });
 });
 
 router.get('/temp', function(req, res, next) {
@@ -214,10 +214,13 @@ router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
 
+<<<<<<< HEAD
 
 router.post('/getSession',(req,res)=>{
   console.log(req.body);
   res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
 });
 
+=======
+>>>>>>> 56b398ca583443d289185348f7e1589b8838bcea
 module.exports = router;

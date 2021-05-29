@@ -1,153 +1,119 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
-/*
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css"/>
     <%- include('common/links'); %>
-  </head>
-  <body>
-    <%- include('common/navbar',{user:navbar.user}); %>
-    <header>
-      <div
-        class="row"
-        style="height: 100vh; overflow: hidden; text-align: center"
-      >
-        <div class="col-md-4" id="textid">
-          <div class="row">
-            <h2 id="maintext"></h2>
-          </div>
-          <div>
-            <a
-              href="/login"
-              class="btn-lg"
-              id="prebtn"
-              style="text-decoration: none"
-            >
-              Log In </a
-            >&nbsp;&nbsp;
-            <a
-              href="/signup"
-              class="btn-lg"
-              id="btn"
-              style="text-decoration: none"
-            >
-              Sign Up
-            </a>
-          </div>
-          <div class="row">
-            <p id="type"></p>
-          </div>
+</head>
+<body>
+<%- include('common/navbar',{auth:data.auth}); %>
+<header>
+    <div class="row" style="height: 100vh; overflow: hidden; text-align: center">
+        <div class="col-md-4 p-4" id="textid">
+            <div class="row">
+                <h2 id="maintext"></h2>
+            </div>
+            <div>
+                <a href="/login" class="btn-lg" id="prebtn" style="text-decoration: none"> Log In </a>&nbsp;&nbsp;
+                <a href="/registration" class="btn-lg" id="btn" style="text-decoration: none">
+                    Sign Up
+                </a>
+            </div>
+            <div class="row">
+                <p id="type"></p>
+            </div>
         </div>
         <div class="col-md-8">
-          <img
-            src="/images/main5.svg "
-            id="mainimg"
-            alt="image"
-            style="transform: scale(1.4)"
-          />
+            <img src="/images/main2.svg " id="mainimg" alt="image" style="transform: scale(1.4)" />
         </div>
-      </div>
-    </header>
-    <!-- Section: Features v.1 -->
-    <section class="text-center my-5" id="about">
-      <!-- Section heading -->
-      <h2 class="h1-responsive font-weight-bold my-5">Why is it so great?</h2>
-      <!-- Section description -->
-      <p class="lead grey-text w-responsive mx-auto mb-5">
-        You can use this tool to boost collaboration and foster communication.
-        Teamify tells you what's being worked on, who's working on what, and
-        where something is in a process. The team can be managed by the team
-        leader and the managers can manage different projects, it can also be
-        used for personal use - more like a list-making/to-do tool. Projects
-        progress can be tracked and deadlines can be set. It makes assigning
-        tasks and managing the team much easier. Make team management a smooth
-        experience with Teamify.
-      </p>
+    </div>
+</header>
+<!-- Section: Features v.1 -->
+<section class="text-center my-5" id="about">
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold my-5">AarogyaVarta – Online Group Medical Consultation Portal</h2>
+    <!-- Section description -->
+    <p class="lead grey-text w-responsive mx-auto mb-5">
+        AarogyaVarta is a platform which efficiently bridges the communication gap between doctors and patients due to
+        the rising Covid-19 Pandemic. We offer you the best medical guidance and treatment from the top doctors across
+        the nation on the basis of your medical condition. Receive the most suitable recommendations of sessions created
+        by various doctors and get instant access to them. If you have queries after watching the session, do not worry!
+        We also provide you the facility of enrolling and joining video conferencing meets scheduled by your session’s
+        doctor, along with multiple Covid Warrior patients like you such that you can interact and resolve all your
+        queries in the online group consultation.
+    </p>
+    <p class="lead grey-text w-responsive mx-auto mb-5">
+        Let’s pledge to fight this pandemic together with unwavering hope and zeal for the beautiful gift of life.
+        Welcome to the AarogyaVarta Family!
+    </p>
 
-      <!-- Grid row -->
-      <div class="row">
+    <!-- Grid row -->
+    <div class="row">
         <!-- Grid column -->
         <div class="col-md-4">
-          <img
-            src="/images/meet.svg"
-            width="70%"
-            height="58.5%"
-            class="image-fluid"
-          />
+            <img
+                    src="/images/vaartabot.svg"
+                    width="70%"
+                    height="58.5%"
+                    class="image-fluid"
+            />
 
-          <h5 class="font-weight-bold my-4">Meet</h5>
-          <p class="grey-text mb-md-0 mb-5">
-            Conduct Real-time, high-quality video meetings, and conferences.
-            Share your videos, presentations with teammates, conduct remote
-            interviews.
-          </p>
+            <h5 class="font-weight-bold my-4">Vaarta Bot</h5>
+            <p class="grey-text mb-md-0 mb-5">
+                Your best friend for finding the best hospitals near your location.
+            </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="col-md-4">
-          <img
-            src="/images/collab.svg"
-            width="70%"
-            height="58.5%"
-            class="image-fluid"
-          />
-          <h5 class="font-weight-bold my-4">Collaborate</h5>
-          <p class="grey-text mb-md-0 mb-5">
-            Fun and flexible way to organize plans, projects, and more. It's a
-            portal to more organized work. Share tasks with teammates.
-          </p>
+            <img
+                    src="/images/24x7.svg"
+                    width="70%"
+                    height="58.5%"
+                    class="image-fluid"
+            />
+            <h5 class="font-weight-bold my-4">24 X 7 Assistance</h5>
+            <p class="grey-text mb-md-0 mb-5">
+                You can watch all uploaded sessions at anytime and seek help from our helpline numbers in case of
+                emergencies.
+            </p>
         </div>
         <!-- Grid column -->
 
         <!-- Grid column -->
         <div class="col-md-4">
-          <img
-            src="/images/manage.svg"
-            width="70%"
-            height="58.5%"
-            class="image-fluid"
-          />
-          <h5 class="font-weight-bold my-4">Manage</h5>
-          <p class="grey-text mb-0">
-            Got a project? Manage it easily with Teamify. Every single part of
-            your task can be managed, tracked, and shared with teammates.
-          </p>
+            <img
+                    src="/images/webresources.svg"
+                    width="70%"
+                    height="58.5%"
+                    class="image-fluid"
+            />
+            <h5 class="font-weight-bold my-4">Web Resources</h5>
+            <p class="grey-text mb-0">
+                Get access to the most reliable and verified reading resources according to your age-group,
+                comorbidity and symptoms.
+            </p>
         </div>
         <!-- Grid column -->
-      </div>
-      <!-- Grid row -->
-    </section>
-    <!-- Section: Features v.1 -->
+    </div>
+    <!-- Grid row -->
+</section>
+<!-- Section: Features v.1 -->
 
-    <!-- <div class="imageclass">
-      <img src="main5.svg" alt="main image" class="img-fluid">   
-  </div> -->
+<!-- <div class="imageclass">
+  <img src="main5.svg" alt="main image" class="img-fluid">
+</div> -->
 
-    <%- include('common/footer'); %>
+<%- include('common/footer'); %>
 
-    <script>
-      new TypeIt("#maintext", {
+<script>
+    new TypeIt("#maintext", {
         strings:
-          "Teamify lets you organize and prioritize projects in a fun, flexible way",
+            "We will not live in fear. We will live in faith",
         speed: 200,
         loop: true,
-      }).go();
-    </script>
-  </body>
+    }).go();
+</script>
+</body>
 </html>
-
-*/
