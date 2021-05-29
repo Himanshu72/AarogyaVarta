@@ -1,11 +1,11 @@
 # ArogyaVarta
 
-Problem Statement:
+# Problem Statement:
 Develop a Web-based software to facilitate Online Group Medical Consultations by connecting multiple Patients having Covid Symptoms with a single Doctor at a time, such that The Medical Fraternity can widen its scope for reaching and treating numerous patients in the minimum possible time irrespective of the physical distance between them in the lethal Covid 19 Pandemic. Patients need to be smartly grouped through the software on the basis of various parameters such that the same consultation is applicable to a set of people. The platform should aid patients to receive the most suitable medical guidance and treatment by channelizing them to appropriate treatment programmes according to their health condition. This project should effectively bridge the communication gap between doctors and patients due to the rising pandemic.
 
-Solution Found:
+# Solution Found:
 We are developing a common web application ‘AarogyaVarta’ for two roles namely, Doctor and Patient which will be distinguished on the basis of their login.
-Doctor-side Description:
+#Doctor-side Description:
 Doctors from varied specializations and hospitals can use our portal to provide medical guidance and treatment to multiple patients at the same time.
 A doctor first needs to register himself/herself on our platform by providing crucial details for his/her profile like Personal Details, Educational Background, Professional Background, Contact Details and Verification Details. Some parts of these details will be shared with patients when they wish to enrol in a session conducted by the doctor.
 After successful Login, the dashboard of the doctor will be categorized into 3 sections namely, Upcoming Meetings (Active Section), Previous Meetings and My Insights.
@@ -22,7 +22,7 @@ A ‘Create New Session’ button will be displayed in the active section throug
    Upcoming Meetings Section – In this section, all the previously created sessions by a doctor along with their details will be shown in separate cards. In each session card, there will be a separate section which will contain the list of details of all The Upcoming Follow-Up Meet Links which have been scheduled by the doctor according to his/her schedule for solving the doubts/concerns which the patients might have after watching the YouTube Session uploaded by the doctor previously. In every meet the doctor can address the queries of up to 100 participants. For a single session, multiple meets can be scheduled. Thus, by using two separate platforms, YouTube (for content delivery) and Google Meet (for consultation/doubt solving) we are effectively saving the doctor’s time to treat numerous patients and also saving the patient’s time by providing him/her instant access to medical guidance followed by answering of their queries shortly after that and aid in early detection of possible health complications.
    Previous Meetings Sections – In this section, the doctor can efficiently track those patients who have attended their follow-up meetings for their specific sessions on a particular day.
    My Insights – In this section, the doctor can view various statistics to analyse the medical background of patients attending his/her meet.
-   Patient-side Description:
+ #  Patient-side Description:
    Patients who are experiencing Covid-like symptoms, have been tested Positive for Covid or need to manage their Post-Covid symptoms from all age groups having underlying health conditions/comorbidities can register themselves on our platform.  
    The patient first needs to register himself/herself on our platform by providing crucial details for his/her profile like Personal Details, Medical History, Contact Details, Emergency Contact Details and Verification Details. Most of these details will be accessible to those doctors whose sessions and follow-up meetings have been attended by the patient.
    After successful Login, the dashboard of the patient will be categorized into 4 main sections namely, Enrol in New Session (Active Section), My Sessions, Chat Bot, Recommended Articles and Helpline Details.
@@ -32,5 +32,5 @@ A ‘Create New Session’ button will be displayed in the active section throug
    Recommended Articles – In this section, articles from verified sources will be suggested to the patient based on his/her age group, comorbidities and symptoms.
    Helpline Details – In this section, the verified government helpline numbers and resources which provide 24X7 consultation will be listed such that serious patients requiring immediate medical assistance can be guided.
 
-Declaration of Technologies, APIs and Libraries Used:
+# Declaration of Technologies, APIs and Libraries Used:
 MD Bootstrap, EJS, Express JS, Node JS, jQuery, MongoDB, Evo Calendar, Typeit JS, Sweet Alert, Rasa – AI bot
