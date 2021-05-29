@@ -8,7 +8,7 @@ auth=(req,res,next)=>{
     if(req.session.user)
         next();
     else
-      res.redirect("/login?code=2");    
+      res.redirect("/login/?code=2");    
 }
 
 unauth=(req,res,next)=>{
@@ -29,8 +29,23 @@ router.get('/temp', function(req, res, next) {
 });
 
 router.get('/login',unauth ,function(req, res, next) {
-  console.log(req.session.v);
-  res.render('login', { title: 'login',data:{auth:false} });
+  console.log(req.query);
+  switch(req.query.code){
+      
+      case "1":
+        res.render('login', { title: 'login',data:{auth:false},alert:{title:"ERROR!",type:"error",msg:"Email Not Found"} });
+        break;
+      case "2":
+        res.render('login', { title: 'login',data:{auth:false},alert:{title:"ERROR!",type:"error",msg:"Please login"} });
+       break;
+       case "3":
+        res.render('login', { title: 'login',data:{auth:false},alert:{title:"ERROR!",type:"error",msg:"Invalid Password"} });
+         break; 
+        default:   
+        
+       res.render('login', { title: 'login',data:{auth:false},alert:{title:"",type:"",msg:"" }});
+      }
+    
 });
 
 router.get('/dashboard/:id', auth,function(req, res, next) {
@@ -47,13 +62,20 @@ router.get('/profile',auth ,function(req, res, next) {
 });
 
 router.get('/registration',unauth ,function(req, res, next) {
-  res.render('reg', { title: 'registration',data:{auth:false} });
+  switch(req.query.code){
+    case 1:
+      res.render('reg', { title: 'registration',data:{auth:false},alert:{title:"ERROR!",msg:"Something Went Wrong",type:"error"} }); 
+    default:
+      res.render('reg', { title: 'registration',data:{auth:false},alert:{title:"",msg:"",type:""} });
+  }
+ 
 });
 router.get("/logout",auth,(req,res)=>{
   req.session.destroy();;
   res.redirect("/login");
 });
 router.post("/reg",async (req,res)=>{
+
   try{  
   console.log(req.body);
   //console.log(req.file.fieldname);

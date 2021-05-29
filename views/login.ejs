@@ -71,6 +71,12 @@
         </div>
       </div>
     </div>
+
     <%- include('common/footer'); %>
+    <script>
+      <%if(alert.type!=""){%>
+      swal("<%=alert.title%>", "<%=alert.msg%>", "<%=alert.type%>");
+      <%}%>
+    </script>
   </body>
 </html>
