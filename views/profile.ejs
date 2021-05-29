@@ -16,7 +16,7 @@
                 <div class="d-flex flex-column align-items-center text-center">
                   <div class="col">
                     <img
-                      src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                      src="data/<%=data.user.photo%>"
                       alt="Admin"
                       class="rounded-circle"
                       width="150"
@@ -24,10 +24,9 @@
                     <i class="fas fa-edit"></i>
                   </div>
                   <div class="mt-3">
-                    <h4>John Doe</h4>
-                    <p class="text-secondary mb-1">Full Stack Developer</p>
-                    <p class="text-muted font-size-sm">
-                      Bay Area, San Francisco, CA
+                    <h4><%=data.user.name.fname%> <%=data.user.name.lname%></h4>
+                    <p class="text-secondary mb-1">
+                      <%=data.user.specialization %>
                     </p>
                   </div>
                 </div>
@@ -190,13 +189,13 @@
                     <input
                       id="firstname"
                       class="col-sm-5 m-2"
-                      value="<%=data.user.fnmae%>"
+                      value="<%=data.user.name.fname%>"
                       disabled=""
                       placeholder="First"
                     />
                     <input
                       class="col-sm-5 m-2"
-                      value="Valdez"
+                      value="<%=data.user.name.lname%>"
                       disabled=""
                       placeholder="Last"
                     />
@@ -207,14 +206,17 @@
                       <h6 class="mb-0">Gender</h6>
                     </div>
                     <select class="col-sm-3 m-2" disabled>
-                      <option>Male</option>
-                      <option>Female</option>
+                      <option><%=data.user.gender%></option>
                     </select>
 
                     <div class="col-sm-2 m-2">
                       <h6 class="mb-0">DOB</h6>
                     </div>
-                    <input type="date" class="col-sm-3 m-2" disabled />
+                    <input
+                      value="<%=data.user.DOB%>"
+                      class="col-sm-3 m-2"
+                      disabled
+                    />
                   </div>
                   <hr />
 
@@ -224,7 +226,7 @@
                     </div>
                     <input
                       class="col-sm-5 m-2"
-                      value="Qualification"
+                      value="<%=data.user.qualification%>"
                       disabled=""
                       placeholder="First"
                     />
@@ -237,7 +239,7 @@
                     </div>
                     <input
                       class="col-sm-5 m-2"
-                      value="Specialization"
+                      value="<%=data.user.specialization%>"
                       disabled=""
                       placeholder="First"
                     />
@@ -252,7 +254,9 @@
                       class="col-sm-8 m-2"
                       disabled=""
                       placeholder="First"
-                    ></textarea>
+                    >
+<%=data.user.hospital%></textarea
+                    >
                   </div>
                   <hr />
 
@@ -262,7 +266,7 @@
                     </div>
                     <input
                       class="col-sm-5 m-2"
-                      value="2+ Yrs"
+                      value="<%=data.user.Experiance%> Years"
                       disabled=""
                       placeholder="First"
                     />
@@ -273,20 +277,11 @@
                     <div class="col-sm-5 m-2">
                       <h6 class="mb-0">Phone</h6>
                     </div>
-                    <div class="col-sm-5 m-2">
-                      <h6 class="mb-0">Mobile</h6>
-                    </div>
                   </div>
                   <div class="row">
                     <input
                       class="col-sm-5 m-2"
-                      value="(239) 816-9029"
-                      disabled=""
-                      placeholder="First"
-                    />
-                    <input
-                      class="col-sm-5 m-2"
-                      value="(320) 380-4539"
+                      value="<%=data.user.phone%>"
                       disabled=""
                       placeholder="First"
                     />
@@ -299,21 +294,13 @@
                     </div>
                     <input
                       class="col-sm-5 m-2"
-                      value="fip@jukmuh.al"
+                      value="<%=data.user.email%>"
                       disabled=""
                       placeholder="First"
                     />
                   </div>
                   <hr />
 
-                  <div class="row">
-                    <div class="col-sm-2 m-2">
-                      <h6 class="mb-0">Address</h6>
-                    </div>
-                    <textarea class="col-sm-8 m-2" disabled placeholder="First">
- Bay Area, San Francisco, CA </textarea
-                    >
-                  </div>
                   <hr />
 
                   <div class="row">
@@ -321,32 +308,14 @@
                       <h6 class="mb-0">Medical Registration Number</h6>
                     </div>
                     <input
-                      type="file"
                       class="col-sm-5 m-2"
-                      value="fip@jukmuh.al"
+                      value="<%=data.user.MRN%>"
                       disabled=""
                       placeholder="First"
                     />
                   </div>
                   <hr />
 
-                  <div class="row">
-                    <div class="col-sm-2 m-2">
-                      <h6 class="mb-0">ID Proof</h6>
-                    </div>
-
-                    <select class="col-sm-3 m-2" disabled>
-                      <option>Aadhar card</option>
-                      <option>Voting card</option>
-                    </select>
-
-                    <input
-                      class="col-sm-5 m-2"
-                      value="123456789"
-                      disabled=""
-                      placeholder="Number"
-                    />
-                  </div>
                   <div
                     class="row"
                     style="display: flex; justify-content: flex-end"
