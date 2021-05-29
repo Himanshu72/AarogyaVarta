@@ -1,226 +1,518 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="">
+<head>
     <title><%= title %></title>
 
     <%- include('common/links'); %>
-  </head>
-  <body>
-    <%- include('common/navbar'); %>
-    <div class="card m-2">
-      <div class="card-body">
+</head>
+<body>
+<%- include('common/navbar'); %>
+<div class="card m-2">
+    <div class="card-body">
         <h5 class="m-3" class="card-title">Create New Session</h5>
 
-        <form style="padding: 2%">
-          <div class="row">
-            <div class="col col-md-6">
-              <br /><br />
-              <label class="m-2 col-2" for="session_topic">Topic: </label>
-              <input class="m-2" type="text" id="session_topic" /><br />
+        <form class="p-5">
+            <div class="row">
+                <div class="col col-md-6">
+                    <div class="row">
+                        <label class="m-2 col-md-4 col-sm-12" for="session_topic">Topic: </label>
+                        <input class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
+                    </div>
 
-              <label class="m-2 col-2" for="session_desc">Description: </label>
-              <textarea class="m-2" type="text" id="session_desc"></textarea
-              ><br />
+                    <div class="row">
+                        <label class="m-2 col-md-4 col-sm-12 col-12" for="session_desc">Description: </label>
+                        <textarea class="m-2 col-md-6 col-sm-12" type="text" id="session_desc"></textarea>
+                    </div>
 
-              <label class="m-2 col-2" for="session_topic"
-                >Youtube Link:
-              </label>
-              <input class="m-2" type="text" id="session_topic" /><br />
+                    <div class="row">
+                        <label class="m-2 col-md-4 col-sm-12" for="session_topic"
+                        >Youtube Link:
+                        </label>
+                        <input class="m-2 col-md-6 col-sm-12" type="text" id="session_topic"/>
+                    </div>
 
-              <label class="m-2 col-2" for="file">Upload Prescription </label>
+                    <div class="row">
+                        <label class="m-2 col-md-4 col-sm-12" for="file">Upload Prescription </label>
 
-              <input
-                type="file"
-                class="btn btn-outline-secondary m-2"
-                id="file"
-              />
+                        <input
+                                type="file"
+                                class="btn btn-outline-secondary m-2 col-md-6 col-sm-12"
+                                id="file"/>
+                    </div>
+                </div>
+                <div class="col col-md-6">
+                    <img src="/images/dash.svg" alt="img" class="img-fluid"/>
+                </div>
             </div>
-            <div class="col col-md-6">
-              <img src="/images/dash.svg" alt="img" class="img-fluid" />
-            </div>
-          </div>
-          <br />
+            <br/>
 
-          <label class="m-2 col-2" for="session_topic">Age Group: </label><br />
-          <div class="row m-2">
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                0 - 1 Months ( Neonates )
-              </label>
-            </div>
+            <label class="col-md-4 col-sm-12" for="session_topic">Age Group: </label>
+            <div class="row m-2">
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        0 - 1 Months ( Neonates )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                1 Month - 2 years ( Infants )
-              </label>
-            </div>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        1 Month - 2 years ( Infants )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                2 - 12 Years ( Children )
-              </label>
-            </div>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        2 - 12 Years ( Children )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                13 - 18 Years ( Adulterants )
-              </label>
-            </div>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        13 - 18 Years ( Adulterants )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                19 - 30 Years ( Young Adults )
-              </label>
-            </div>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        19 - 30 Years ( Young Adults )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                31 -60 Years ( Adults )
-              </label>
-            </div>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        31 -60 Years ( Adults )
+                    </label>
+                </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Above 60 ( Senior Adults )</label
-              >
-            </div>
-          </div>
-
-          <label class="m-2 col-2" for="session_topic">Comorbidity: </label
-          ><br />
-          <div class="row m-2">
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Diabetics
-              </label>
+                <div class="form-check col-md-4 col-sm-8">
+                    <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Above 60 ( Senior Adults )</label
+                    >
+                </div>
             </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Chronic Lung Disease
-              </label>
+            <label class="m-2 col-md-4 col-sm-12" for="session_topic">Comorbidity: </label>
+            <div class="row m-2">
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cancer
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Chronic kidney disease
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Chronic lung diseases
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Asthma
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        interstitial lung disease
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cystic fibrosis
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Dementia
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Pulmonary hypertension
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Diabetes
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Down syndrome
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Heart conditions
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        HIV infection
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Uncompromised state
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Liver disease
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Overweight and obesity
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Pregnancy
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Stroke
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Solid organ
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sickle cell disease
+                    </label>
+                </div>
+
             </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                ...
-              </label>
-            </div>
-          </div>
+            <label class="m-2 col-md-4 col-sm-12" for="session_topic">Symptoms: </label>
+            <div class="row m-2">
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Headache
+                    </label>
+                </div>
 
-          <label class="m-2 col-2" for="session_topic">Symptoms: </label><br />
-          <div class="row m-2">
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Headache
-              </label>
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Fever
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Body pain
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Cough
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Diarrhea
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Nasal Congestion
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Tiredness
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Sore Throat
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Persistent pain
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Trouble Breathing
+                    </label>
+                </div>
+
+                <div class="form-check col-md-4 col-sm-6">
+                    <input
+                            class="form-check-input"
+                            type="checkbox"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                    />
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Stay Awake
+                    </label>
+                </div>
             </div>
 
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                Fever
-              </label>
+            <div
+                    class="row"
+                    style="display: flex; align-items: center; justify-content: center">
+                <button type="button" class="btn btn-outline-secondary m-4 col-6">
+                    <i class="fas fa-plus"></i> Create Session
+                </button>
             </div>
-
-            <div class="form-check col-4">
-              <input
-                class="form-check-input"
-                type="checkbox"
-                name="flexRadioDefault"
-                id="flexRadioDefault1"
-              />
-              <label class="form-check-label" for="flexRadioDefault1">
-                ...
-              </label>
-            </div>
-          </div>
-
-          <div
-            class="row"
-            style="display: flex; align-items: center; justify-content: center"
-          >
-            <button type="button" class="btn btn-outline-secondary m-4 col-6">
-              <i class="fas fa-plus"></i> Create Session
-            </button>
-          </div>
         </form>
-      </div>
     </div>
+</div>
 
-    <%- include('common/footer'); %>
-  </body>
+<%- include('common/footer'); %>
+</body>
 </html>
 <!--
 background: #4CB8C4;  /* fallback for old browsers */
