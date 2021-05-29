@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <div class="d-flex flex-column align-items-center text-center">
                             <div class="col">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
+                                <img name="photo" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
                                      class="rounded-circle" width="150">
                                 <i class="fas fa-edit"></i>
                             </div>
@@ -91,15 +91,15 @@
                                 <div class="col-sm-12 m-2">
                                     <h6 class="mb-0">Name</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" value="Kenneth" disabled="" placeholder="First"/>
-                                <input class="col-sm-5 m-2 editable" value="Valdez" disabled="" placeholder="Last"/>
+                                <input class="col-sm-5 m-2 editable" name="fname" value="Kenneth" disabled="" placeholder="First"/>
+                                <input class="col-sm-5 m-2 editable" name="lname" value="Valdez" disabled="" placeholder="Last"/>
                             </div>
                             <hr>
                             <div class="row">
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Gender</h6>
                                 </div>
-                                <select class="col-sm-3 m-2 editable" disabled>
+                                <select name="gender" class="col-sm-3 m-2 editable" disabled>
                                     <option>Male</option>
                                     <option>Female</option>
                                 </select>
@@ -107,7 +107,7 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">DOB</h6>
                                 </div>
-                                <input type="date" class="col-sm-3 m-2 editable" disabled/>
+                                <input name="DOB" type="date" class="col-sm-3 m-2 editable" disabled/>
                             </div>
                             <hr>
 
@@ -115,7 +115,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Qualification</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" value="Qualification" disabled="" placeholder="First"/>
+                                <input name="qualification" class="col-sm-5 m-2 editable" value="Qualification" disabled=""
+                                       placeholder="First"/>
                             </div>
                             <hr>
 
@@ -123,7 +124,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Specialization</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" value="Specialization" disabled="" placeholder="First"/>
+                                <input name="specialization" class="col-sm-5 m-2 editable" value="Specialization" disabled=""
+                                       placeholder="First"/>
                             </div>
                             <hr>
 
@@ -131,7 +133,7 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Hospital / Clinic</h6>
                                 </div>
-                                <textarea class="col-sm-8 m-2 editable" disabled="" placeholder="First"></textarea>
+                                <textarea name="hospital" class="col-sm-8 m-2 editable" disabled="" placeholder="First"></textarea>
                             </div>
                             <hr>
 
@@ -139,7 +141,7 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Experience</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" value="2+ Yrs" disabled="" placeholder="First"/>
+                                <input name="Experiance" class="col-sm-5 m-2 editable" value="2+ Yrs" disabled="" placeholder="First"/>
                             </div>
                             <hr>
 
@@ -153,8 +155,10 @@
 
                             </div>
                             <div class="row">
-                                <input class="col-sm-5 m-2 editable" value="(239) 816-9029" disabled="" placeholder="First"/>
-                                <input class="col-sm-5 m-2 editable" value="(320) 380-4539" disabled="" placeholder="First"/>
+                                <input name="phone" class="col-sm-5 m-2 editable" value="(239) 816-9029" disabled=""
+                                       placeholder="First"/>
+                                <input name="phone" class="col-sm-5 m-2 editable" value="(320) 380-4539" disabled=""
+                                       placeholder="First"/>
                             </div>
                             <hr>
 
@@ -162,7 +166,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled="" placeholder="First"/>
+                                <input name="email" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                                       placeholder="First"/>
                             </div>
                             <hr>
 
@@ -171,7 +176,7 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Address</h6>
                                 </div>
-                                <textarea class="col-sm-8 m-2 editable" disabled
+                                <textarea name="address" class="col-sm-8 m-2 editable" disabled
                                           placeholder="First"> Bay Area, San Francisco, CA </textarea>
                             </div>
                             <hr>
@@ -180,7 +185,7 @@
                                 <div class="col-sm-3 m-2">
                                     <h6 class="mb-0">Medical Registration Number</h6>
                                 </div>
-                                <input type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                                <input name="MRN" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
                                        placeholder="First"/>
                             </div>
                             <hr>
@@ -189,18 +194,13 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">ID Proof</h6>
                                 </div>
-
-                                <select class="col-sm-3 m-2 editable" disabled>
-                                    <option>Aadhar card</option>
-                                    <option>Voting card</option>
-                                </select>
-
-                                <input class="col-sm-5 m-2 editable" value="123456789" disabled="" placeholder="Number"/>
+                                <input name="proof" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                                       placeholder="First"/>
                             </div>
-                            <div class="row" style="display: flex;justify-content: flex-end;" >
+                            <div class="row" style="display: flex;justify-content: flex-end;">
                                 <div class="col-5">
-                                    <button type="button" class="perbtn" onclick="allowEditing();"> Edit </button>
-                                    <button class="perbtn" onclick="disallowEditing()"> Submit </button>
+                                    <button type="button" class="perbtn" onclick="allowEditing();"> Edit</button>
+                                    <button class="perbtn" onclick="disallowEditing()"> Submit</button>
                                 </div>
                             </div>
                         </form>
@@ -213,9 +213,16 @@
 </div>
 
 <script type="application/javascript">
-    function allowEditing(){
-        document.querySelectorAll('.editable').disabled = false;
-        return;
+    let x = true;
+    function allowEditing() {
+        document.querySelectorAll('.editable').forEach(ele => {
+            if (x) {
+                ele.disabled = false;
+            } else {
+                ele.disabled = true;
+            }
+        });
+        x = !x;
     }
 </script>
 

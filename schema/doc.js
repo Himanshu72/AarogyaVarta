@@ -15,6 +15,7 @@ let doc= new Schema({
     email:{type:String,unique:true},
     address:{type:String},
     MRN:{type:String},
+    proof:{type:String},
     photo:{type:String},
     sign:{type:String},
     proof:{type:String}
