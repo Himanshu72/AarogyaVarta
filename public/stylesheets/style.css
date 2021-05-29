@@ -1,59 +1,103 @@
 body {
-  padding: 0;
-  margin: 0;
-  background: rgb(248, 247, 247);
-  font-size: 1.2em;
+    padding: 0;
+    margin: 0;
+    background: rgb(248, 247, 247);
+    font-size: 1.2em;
 }
 
 a {
-  color: #00b7ff;
+    color: #00b7ff;
 }
 
 #navbar,
 #footer {
-  background: #4cb8c4 !important; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3cd3ad,
-    #4cb8c4
-  ) !important; /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3cd3ad,
-    #4cb8c4
-  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #4cb8c4 !important; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+            to right,
+            #3cd3ad,
+            #4cb8c4
+    ) !important; /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+            to right,
+            #3cd3ad,
+            #4cb8c4
+    ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+#textid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#maintext {
+    /* font-family: 'Montserrat', sans-serif; */
+    text-shadow: 0.5px 0.5px 0.5px;
+    text-align: justify;
+}
+
+#mainimg {
+    width: 100%;
+    height: 70%;
+}
+
 .cusbtn {
-  font-size: 1em;
-  color: white;
-  border: 1px solid white;
-  cursor: pointer;
-  transition: 1 all ease;
-  background: transparent;
+    font-size: 1em;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 1 all ease;
+    background: transparent;
 }
 
 .cusbtn:hover {
-  transform: scale(1.1);
-  background-color: #33909b;
+    transform: scale(1.1);
+    background-color: #33909b;
 }
 
 .perbtn {
-  color: white;
-  border: none;
-  padding-bottom: 0.5%;
-  font-size: 1em;
-  background: #33909b;
-  cursor: pointer;
-  transition: 1 all ease;
-  background: #4cb8c4 !important; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #3cd3ad,
-    #4cb8c4
-  ) !important; /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #3cd3ad,
-    #4cb8c4
-  ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+    border: none;
+    padding-bottom: 0.5%;
+    font-size: 1em;
+    background: #33909b;
+    cursor: pointer;
+    transition: 1 all ease;
+    background: #4cb8c4 !important; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+            to right,
+            #3cd3ad,
+            #4cb8c4
+    ) !important; /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+            to right,
+            #3cd3ad,
+            #4cb8c4
+    ) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+#prebtn {
+    background-color: #3cd3ad;
+    color: #fcf6f1;
+    border: 1px;
+    transition: all 0.3 ease-in;
+}
+
+#btn {
+    background-color: transparent;
+    color: #3cd3ad;
+    border: 1px solid;
+    transition: all 0.3 ease-in;
+}
+#btn:hover {
+    background: #3cd3ad;
+    color: #fcf6f1;
+    transform: scale(1.2);
+}
+
+#prebtn:hover {
+    background: transparent;
+    color: #3cd3ad;
+    border: 1px solid;
+    transform: scale(1.2);
 }
