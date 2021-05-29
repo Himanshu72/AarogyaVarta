@@ -13,7 +13,7 @@
         <div class="col-md-6">
           <div class="card">
             <div class="card-body">
-              <form action="/reg" method="POST">
+              <form action="/reg" method="POST" enctype="multipart/form-data">
                 <div class="row">
                   <div class="col-sm-12 m-2">
                     <h6 class="mb-0">Name</h6>
@@ -105,17 +105,17 @@
                 </div>
                 <div class="row">
                   <input
-                          name="phone"
-                          class="col-sm-5 m-2 "
-                          placeholder="phone number"
+                    name="phone"
+                    class="col-sm-5 m-2"
+                    placeholder="phone number"
                   />
                   <input
-                          name="email"
-                          class="col-sm-5 m-2 "
-                          placeholder="email"
+                    name="email"
+                    class="col-sm-5 m-2"
+                    placeholder="email"
                   />
                 </div>
-                <hr/>
+                <hr />
 
                 <div class="row">
                   <div class="col-sm-2 m-2">
@@ -154,6 +154,14 @@
                     <h6 class="mb-0">ID Proof</h6>
                   </div>
                   <input name="proof" type="file" class="col-sm-5 m-2" />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 m-2">
+                    <h6 class="mb-0">Profile Photo</h6>
+                  </div>
+                  <input name="photo" type="file" class="col-sm-5 m-2" />
                 </div>
                 <div
                   class="col-12"
