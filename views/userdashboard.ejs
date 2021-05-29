@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <style>
+        input {
+            width: 100%;
+            margin: 0.3%;;
+        }
+    </style>
+    <%- include('common/links'); %>
+</head>
+
+
+<body>
+<%- include('common/navbar',{auth:data.auth}); %>
+
+
+<div class="card m-2">
+    <div class="card-body">
+        <form action="/reg" method="POST">
+            <div class="row m-2">
+                <div class="col-md-2">
+                    <label>My age group </label>
+                </div>
+                <div class="col">
+                    <label class="btn btn-outline-secondary">0-2 years</label>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-secondary">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row m-2">
+                <div class="col-md-2">
+                    <label>My Comorbidity </label>
+                </div>
+                <div class="col">
+                    <label class="btn btn-outline-secondary">Cancer</label>
+                    <label class="btn btn-outline-secondary">Chronic kidney disease</label>
+                    <label class="btn btn-outline-secondary">Chronic lung diseases</label>
+                    <label class="btn btn-outline-secondary">Asthma</label>
+                    <label class="btn btn-outline-secondary">Diabetes</label>
+                </div>
+                <div class="col-md-1">
+                    <button type="button" class="btn btn-outline-secondary">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="row m-2">
+                <label class="m-2 col-md-4 col-sm-12" for="session_topic">Symptoms: </label>
+                <div class="row m-2">
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Headache
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Fever
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Body pain
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Cough
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Diarrhea
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Nasal Congestion
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Tiredness
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Sore Throat
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Persistent pain
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Trouble Breathing
+                        </label>
+                    </div>
+
+                    <div class="form-check col-md-4 col-sm-6">
+                        <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="flexRadioDefault"
+                                id="flexRadioDefault1"
+                        />
+                        <label class="form-check-label" for="flexRadioDefault1">
+                            Stay Awake
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12" style="display: flex;justify-content: center;">
+                    <button type="button" class="btn btn-outline-secondary">
+                        <i class="fas fa-search"></i> Find New Session
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row m-2 mt-4">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row" style="padding-top: 6%;">
+                    <div class="col-md-4">
+                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                             class="img-thumbnail"
+                             alt="..."/>
+                    </div>
+                    <div class="col-md-8">
+                        Doctor name : Vishwam panyda <br>
+                        Qualification : MscIt<br>
+                        Organization : Daiict
+                    </div>
+                </div>
+
+                <h5 class="card-title mt-4">Topic</h5>
+                <p class="card-text">
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Description:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        Some quick example text to build on the card title and make up
+                        the bulk of the card's content.
+                    </div>
+                </div>
+
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>SessionLink:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        www.youtube.com
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Prescription:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        <a href="./fil2" target="_blank"> Covid12.pdf </a>
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class=" col-md-4">
+                        <strong>Age Group:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        12-18
+                    </div>
+                </div>
+                </p>
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Comorbidities <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample">
+
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                </div>
+
+                </p>
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample3">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
+                        Symptoms <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample3">
+
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                </div>
+
+                </p>
+
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample2">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
+                        Follow-up Meetings <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3 text-center" id="collapseExample2">
+                    <ul style="list-style: none;  margin: 0; padding: 0px;">
+                        <li style="background: rgb(240, 234, 234); padding:0.1% ; ">
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
+                                </div>
+
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6">
+                                    1-2 pm:
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br/>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row" style="padding-top: 6%;">
+                    <div class="col-md-4">
+                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                             class="img-thumbnail"
+                             alt="..."/>
+                    </div>
+                    <div class="col-md-8">
+                        Doctor name : Vishwam panyda <br>
+                        Qualification : MscIt<br>
+                        Organization : Daiict
+                    </div>
+                </div>
+
+                <h5 class="card-title mt-4">Topic</h5>
+                <p class="card-text">
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Description:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        Some quick example text to build on the card title and make up
+                        the bulk of the card's content.
+                    </div>
+                </div>
+
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>SessionLink:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        www.youtube.com
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Prescription:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        <a href="./fil2" target="_blank"> Covid12.pdf </a>
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class=" col-md-4">
+                        <strong>Age Group:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        12-18
+                    </div>
+                </div>
+                </p>
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Comorbidities <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample">
+
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                </div>
+
+                </p>
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample3">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
+                        Symptoms <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample3">
+
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                </div>
+
+                </p>
+
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample2">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
+                        Follow-up Meetings <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3 text-center" id="collapseExample2">
+                    <ul style="list-style: none;  margin: 0; padding: 0px;">
+                        <li style="background: rgb(240, 234, 234); padding:0.1% ; ">
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
+                                </div>
+
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6">
+                                    1-2 pm:
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br/>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row" style="padding-top: 6%;">
+                    <div class="col-md-4">
+                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                             class="img-thumbnail"
+                             alt="..."/>
+                    </div>
+                    <div class="col-md-8">
+                        Doctor name : Vishwam panyda <br>
+                        Qualification : MscIt<br>
+                        Organization : Daiict
+                    </div>
+                </div>
+
+                <h5 class="card-title mt-4">Topic</h5>
+                <p class="card-text">
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Description:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        Some quick example text to build on the card title and make up
+                        the bulk of the card's content.
+                    </div>
+                </div>
+
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>SessionLink:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        www.youtube.com
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <strong>Prescription:</strong>
+                    </div>
+                    <div class=" col-md-8">
+                        <a href="./fil2" target="_blank"> Covid12.pdf </a>
+                    </div>
+                </div>
+                </p>
+                <p>
+                <div class="row">
+                    <div class=" col-md-4">
+                        <strong>Age Group:</strong>
+                    </div>
+                    <div class="col-md-8">
+                        12-18
+                    </div>
+                </div>
+                </p>
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
+                        Comorbidities <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample">
+
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                    <span class="badge rounded-pill bg-danger">Danger</span>
+                </div>
+
+                </p>
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample3">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
+                        Symptoms <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3" id="collapseExample3">
+
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                    <span class="badge rounded-pill bg-warning">Danger</span>
+                </div>
+
+                </p>
+
+
+                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                   href="#collapseExample2">
+                    <!-- Buttons trigger collapse -->
+                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
+                        Follow-up Meetings <i class="fas fa-chevron-down"></i>
+                    </strong>
+                <div class="collapse mt-3 text-center" id="collapseExample2">
+                    <ul style="list-style: none;  margin: 0; padding: 0px;">
+                        <li style="background: rgb(240, 234, 234); padding:0.1% ; ">
+                            <div class="row">
+
+                                <div class="col-6">
+                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
+                                </div>
+
+                            </div>
+                            <br/>
+                            <div class="row">
+                                <div class="col-6">
+                                    1-2 pm:
+                                </div>
+                                <div class="col-6">
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <br/>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('common/footer'); %>
+
+</body>
+
+</html>
