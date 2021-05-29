@@ -17,61 +17,13 @@
   </head>
 
   <body>
-  <%- include('common/navbar',{auth:data.auth}); %>
+    <%- include('common/navbar',{auth:data.auth}); %>
     <div class="container">
       <br />
       <br />
       <div id="calendar" style="z-index: 1"></div>
       <br />
       <br />
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Time</th>
-            <th scope="col">Session No.</th>
-            <th scope="col">Topic</th>
-            <th scope="col">List Of Participant</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
     </div>
     <%- include('common/footer'); %>
 
@@ -82,18 +34,17 @@
         calendarEvents: [
           {
             id: "bHay68s", // Event's ID (required)
-            name: "New Year", // Event name (required)
-            date: "January/1/2020", // Event date (required)
+            name: "relif from body pain", // Event name (required)
+            date: "May/1/2021", // Event date (required)
             type: "holiday", // Event type (required)
             everyYear: true, // Same event every year (optional)
           },
           {
-            name: "Vacation Leave",
-            badge: "02/13 - 02/15", // Event badge (optional)
-            date: ["February/13/2020", "February/15/2020"], // Date range
-            description: "Vacation leave for 3 days.", // Event description (optional)
-            type: "event",
-            color: "#63d867", // Event custom color (optional)
+            id: "bHays", // Event's ID (required)
+            name: "Covid(Diabetes)", // Event name (required)
+            date: "May/5/2021", // Event date (required)
+            type: "holiday", // Event type (required)
+            everyYear: true, // Same event every year (optional)
           },
         ],
       });
