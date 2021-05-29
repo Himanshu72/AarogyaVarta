@@ -31,18 +31,18 @@
             <br />
             <div class="row">
                 <%if(data.sessions.length > 0){%>
+                    <%data.sessions.forEach((ele,index)=>{%>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Topic</h5>
+                            <h5 class="card-title text-center"><%=ele.topic%></h5>
                             <p class="card-text">
                             <div class="row">
                                 <div class="col-md-4">
                                     <strong>Description:</strong>
                                 </div>
                                 <div class=" col-md-8">
-                                    Some quick example text to build on the card title and make up
-                                    the bulk of the card's content.
+                                    <%=ele.description%>
                                 </div>
                             </div>
 
@@ -53,7 +53,7 @@
                                     <strong>SessionLink:</strong>
                                 </div>
                                 <div class=" col-md-8">
-                                    www.youtube.com
+                                    <%=ele.session%>
                                 </div>
                             </div>
                             </p>
@@ -63,7 +63,7 @@
                                     <strong>Prescription:</strong>
                                 </div>
                                 <div class=" col-md-8">
-                                    <a href="./fil2" target="_blank"> Covid12.pdf </a>
+                                    <a href="/data/<%=ele.prescription%>" target="_blank"> prescription.pdf </a>
                                 </div>
                             </div>
                             </p>
@@ -73,55 +73,70 @@
                                     <strong>Age Group:</strong>
                                 </div>
                                 <div class="col-md-8">
-                                    12-18
+                                    <% let arr=ele.age.split("-")%>
+                                    <%let f,l %>
+                                    <%if( arr[0][arr[0].length - 1]=='Y'){%>
+                                       <%f= arr[0].substring(0,arr[0].length - 1) +"Year"%>
+                                        <%}else{%>
+                                        
+                                            <%f= arr[0].substring(0,arr[0].length - 1) +"Monthe"%>
+                                            <%}%>
+                                            <%if( arr[1][arr[1].length - 1]=='Y'){%>
+                                                <%l= arr[1].substring(0,arr[1].length - 1) +"Year"%>
+                                                 <%}else{%>
+                                                 
+                                                     <%l= arr[1].substring(0,arr[1].length - 1) +"Monthe"%>
+                                                     <%}%>   
+                                                     <%=f%>-<%=l%>
+                                            
                                 </div>
                             </div>
                             </p>
 
                             <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                                href="#collapseExample">
+                                href="#c<%=index%>">
                                 <!-- Buttons trigger collapse -->
-                                <strong role="button" aria-expanded="false" aria-controls="collapseExample">
+                                <strong role="button" aria-expanded="false" aria-controls="c<%=index%>">
                                     Comorbidities <i class="fas fa-chevron-down"></i>
                                 </strong>
-                            <div class="collapse mt-3" id="collapseExample">
-
-                                <span class="badge rounded-pill bg-danger">Danger</span>
-                                <span class="badge rounded-pill bg-danger">Danger</span>
-                                <span class="badge rounded-pill bg-danger">Danger</span>
-                                <span class="badge rounded-pill bg-danger">Danger</span>
+                            <div class="collapse mt-3" id="c<%=index%>">
+                                <%ele.comborbidities.forEach((e)=>{%>
+                                <span class="badge rounded-pill bg-danger"><%=e%></span>
+                               <%})%>
                             </div>
 
                             </p>
                             <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                                href="#collapseExample3">
+                                href="#d<%=index%>">
                                 <!-- Buttons trigger collapse -->
-                                <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
+                                <strong role="button" aria-expanded="false" aria-controls="d<%=index%>">
                                     Symptoms <i class="fas fa-chevron-down"></i>
                                 </strong>
-                            <div class="collapse mt-3" id="collapseExample3">
-
-                                <span class="badge rounded-pill bg-warning">Danger</span>
-                                <span class="badge rounded-pill bg-warning">Danger</span>
-                                <span class="badge rounded-pill bg-warning">Danger</span>
-                                <span class="badge rounded-pill bg-warning">Danger</span>
+                            <div class="collapse mt-3" id="d<%=index%>">
+                                <%ele.Symptons.forEach((e)=>{%>
+                                <span class="badge rounded-pill bg-warning"><%=e%></span>
+                                <%});%>
+                                
                             </div>
 
                             </p>
 
 
                             <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                            href="#collapseExample2">
+                            href="#e<%=index%>">
                             <!-- Buttons trigger collapse -->
-                            <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
+                            <strong role="button" aria-expanded="false" aria-controls="e<%=index%>">
                                 Follow-up Meetings <i class="fas fa-chevron-down"></i>
                             </strong>
-                        <div class="collapse mt-3 text-center" id="collapseExample2" >
+                        <div class="collapse mt-3 text-center" id="e<%=index%>"" >
                            <ul style="list-style: none;  margin: 0; padding: 0px;">
-                               <li style="background: rgb(240, 234, 234); padding:0.1% ; ">                            <div class="row" >
+                            <%ele.meet.forEach(e=>{%> 
+                                <%let cur=data.meets.find(d=>d._id==e)%>
+                                <
+                            <li style="background: rgb(240, 234, 234); padding:0.1% ; ">                            <div class="row" >
                                 
                                 <div class="col-6">
-                                    <i class="far fa-calendar-alt text-success"></i>    30-May-2021
+                                    <i class="far fa-calendar-alt text-success"></i>  <%=cur.shedule.toISOString().substring(0,10)%>
                                 </div>
 
                               <div class="col-6" >
@@ -131,14 +146,16 @@
                             <br />
                             <div class="row" >
                                 <div class="col-6">
-                                   1-2 pm:
+                                    <%=cur.shedule.toISOString().substring(11,16)%>
                                 </div>
                                 <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Join Meet</a>
+                                    <a href="<%=cur.link%>"  target="_blank" class="btn btn-primary">Join Meet</a>
                                 </div>
                               
                             </div>
                                  </li>
+                                 <%})%>
+
                                 </ul>
                                 </div>
                                 <br />
@@ -151,6 +168,7 @@
                         </div>
                     </div>
                 </div>
+                <%})%>
                 <%}%>
             </div>
         </div>

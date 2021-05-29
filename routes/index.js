@@ -63,13 +63,14 @@ router.get('/dashboard/:id', auth,checkdash,async function(req, res, next) {
   try{
     let meets=[];
     let sessions=await db.getSessions(req.params.id);
-    console.log(sessions);
+    //console.log(sessions);
     sessions.forEach(ele=>{
           if(ele.meet.length > 0){
-            meets.concat(ele.meet);
+            meets.push(...ele.meet);
           }
     });
     let fullmeets= await db.getMeets(meets);
+  
     switch(req.query.code){
       case "1":
         throw 1;
