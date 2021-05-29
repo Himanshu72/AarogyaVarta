@@ -29,4 +29,8 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'profile',data:{auth:true} });
 });
 
+router.get('/registration', function(req, res, next) {
+  res.render('reg', { title: 'registration',data:{auth:false} });
+});
+
 module.exports = router;
