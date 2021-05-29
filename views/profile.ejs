@@ -91,8 +91,10 @@
                                 <div class="col-sm-12 m-2">
                                     <h6 class="mb-0">Name</h6>
                                 </div>
-                                <input class="col-sm-5 m-2 editable" name="fname" value="Kenneth" disabled="" placeholder="First"/>
-                                <input class="col-sm-5 m-2 editable" name="lname" value="Valdez" disabled="" placeholder="Last"/>
+                                <input class="col-sm-5 m-2 editable" name="fname" value="Kenneth" disabled=""
+                                       placeholder="First"/>
+                                <input class="col-sm-5 m-2 editable" name="lname" value="Valdez" disabled=""
+                                       placeholder="Last"/>
                             </div>
                             <hr>
                             <div class="row">
@@ -115,7 +117,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Qualification</h6>
                                 </div>
-                                <input name="qualification" class="col-sm-5 m-2 editable" value="Qualification" disabled=""
+                                <input name="qualification" class="col-sm-5 m-2 editable" value="Qualification"
+                                       disabled=""
                                        placeholder="First"/>
                             </div>
                             <hr>
@@ -124,7 +127,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Specialization</h6>
                                 </div>
-                                <input name="specialization" class="col-sm-5 m-2 editable" value="Specialization" disabled=""
+                                <input name="specialization" class="col-sm-5 m-2 editable" value="Specialization"
+                                       disabled=""
                                        placeholder="First"/>
                             </div>
                             <hr>
@@ -133,7 +137,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Hospital / Clinic</h6>
                                 </div>
-                                <textarea name="hospital" class="col-sm-8 m-2 editable" disabled="" placeholder="First"></textarea>
+                                <textarea name="hospital" class="col-sm-8 m-2 editable" disabled=""
+                                          placeholder="First"></textarea>
                             </div>
                             <hr>
 
@@ -141,7 +146,8 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Experience</h6>
                                 </div>
-                                <input name="Experiance" class="col-sm-5 m-2 editable" value="2+ Yrs" disabled="" placeholder="First"/>
+                                <input name="Experiance" class="col-sm-5 m-2 editable" value="2+ Yrs" disabled=""
+                                       placeholder="First"/>
                             </div>
                             <hr>
 
@@ -185,7 +191,8 @@
                                 <div class="col-sm-3 m-2">
                                     <h6 class="mb-0">Medical Registration Number</h6>
                                 </div>
-                                <input name="MRN" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                                <input name="MRN" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al"
+                                       disabled=""
                                        placeholder="First"/>
                             </div>
                             <hr>
@@ -194,14 +201,13 @@
                                 <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">ID Proof</h6>
                                 </div>
-                                <input name="proof" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
+                                <input name="proof" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al"
+                                       disabled=""
                                        placeholder="First"/>
                             </div>
-                            <div class="row" style="display: flex;justify-content: flex-end;">
-                                <div class="col-5">
-                                    <button type="button" class="perbtn" onclick="allowEditing();"> Edit</button>
-                                    <button class="perbtn" onclick="disallowEditing()"> Submit</button>
-                                </div>
+                            <div class="col-5" style="display: flex;justify-content: flex-end;">
+                                <button type="button" class="perbtn m-2" onclick="allowEditing();"> Edit</button>
+                                <button class="perbtn m-2"> Submit</button>
                             </div>
                         </form>
                     </div>
@@ -214,6 +220,7 @@
 
 <script type="application/javascript">
     let x = true;
+
     function allowEditing() {
         document.querySelectorAll('.editable').forEach(ele => {
             if (x) {
