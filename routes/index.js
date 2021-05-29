@@ -61,10 +61,19 @@ router.get('/login',unauth ,function(req, res, next) {
 
 router.get('/dashboard/:id', auth,checkdash,async function(req, res, next) {
   try{
-  res.render('dashboard', { title: 'dashboard',data:{auth:true},alert:{type:"",msg:"",title:""} });
+    let meets=[];
+    let sessions=await db.getSessions(req.params.id);
+    console.log(sessions);
+    sessions.forEach(ele=>{
+          if(ele.meet.length > 0){
+            meets.concat(ele.meet);
+          }
+    });
+    let fullmeets= await db.getMeets(meets);
+    res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:fullmeets,sessions:sessions},alert:{type:"",msg:"",title:""} });
   }catch(err){
    console.log(err); 
-   res.render('dashboard', { title: 'dashboard',data:{auth:true},alert:{type:"error",msg:"Something Went Wrong",title:"ERROR!"} });
+   res.render('dashboard', { title: 'dashboard',data:{auth:true,meets:[],sessions:[]},alert:{type:"error",msg:"Something Went Wrong",title:"ERROR!"} });
   }
 });
 router.get('/previous/:id',auth,checkdash, function(req, res, next) {

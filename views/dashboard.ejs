@@ -145,7 +145,7 @@
                         
 
                         </p>
-                            <button type="button" data-mdb-toggle="modal"
+                            <button type="button" onclick="btn(this)" data-sis="3" data-mdb-toggle="modal"
                             data-mdb-target="#exampleModal" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Shedule New Meet</button>
                         </div>
                     </div>
@@ -163,7 +163,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create Meet</h5>
         <button
           type="button"
           class="btn-close"
@@ -171,13 +171,13 @@
           aria-label="Close"
         ></button>
       </div>
-      <form>
+      <form action="/meet/1" id="mform" >
       <div class="modal-body">
         <div class="form-outline"  >
-            <input type="text" name="meet" placeholder="Enter Meet Link"  />
+            <input type="text" name="link" placeholder="Enter Meet Link"  />
         </div> <br />
           <div class="form-outline"  >
-            <input type="datetime-local" name="date"  />
+            <input type="datetime-local" name="shedule"  />
             
           </div><br />
           <div class="form-outline">   
@@ -195,6 +195,14 @@
   </div>
 </div>
         <%- include('common/footer'); %>
+        <script>
+        function btn(e){
+            let sid=e.dataset.sis;
+            document.querySelector("#mform").action="/meet/"+sid;
+
+
+        }
+        </script>
         
 </body>
 
