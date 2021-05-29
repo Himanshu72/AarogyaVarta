@@ -31,8 +31,8 @@ checkdash=(req,res,next)=>{
 
 /* GET home page. */
 router.get('/', async function(req, res, next) {
- 
-  res.redirect("/login");
+
+    res.render('index', { title: 'home',data:{auth:true} });
 });
 
 router.get('/temp', function(req, res, next) {
@@ -213,7 +213,5 @@ router.get('/uregistration', function(req, res, next) {
 router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
-
-
 
 module.exports = router;
