@@ -180,6 +180,16 @@ router.post("/createsession",auth,async (req,res)=>{
   }
 });
 
+router.post("/meet/:sid",auth,async (req,res)=>{
+      try{
+          let meet=await db.insertMeet(req.body);
+          await db.addMeet(req.params.sid,meet._id);
+      }catch(err){
+        console.log(err);
+        res.redirect(`/dashboard/${req.sesssion.user._id}/?code=1`);
+      }
+});
+
 router.get('/usession', function(req, res, next) {
   res.render('userenroledsession', { title: 'session',data:{auth:true} });
 });
@@ -191,4 +201,6 @@ router.get('/uregistration', function(req, res, next) {
 router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
+
+
 module.exports = router;

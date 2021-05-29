@@ -203,6 +203,11 @@
 
         }
         </script>
+         <script>
+            <%if(alert.type!=""){%>
+            swal("<%=alert.title%>", "<%=alert.msg%>", "<%=alert.type%>");
+            <%}%>
+          </script>
         
 </body>
 
