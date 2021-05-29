@@ -92,13 +92,11 @@ router.post("/reg",async (req,res)=>{
       if (err) throw err;
     });
 
-    req.files.MRN.mv(path.join(__dirname, '../public/data/', username+"MRN"), (err) => {
-      if (err) throw err;
-    });
+   
 
     req.body.proof=username+"proof";
     req.body.photo=username+"photo;"
-    req.body.MRN=username+"MRN";
+    
 
    await db.insertDoc(req.body);  
 
