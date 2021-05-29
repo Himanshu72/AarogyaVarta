@@ -12,7 +12,7 @@ let doc= new Schema({
     hospital:{type:String},
     Experiance:{type:Number},
     phone:{type:String,unique:true},
-    email:{type:String,,unique:true},
+    email:{type:String,unique:true},
     address:{type:String},
     MRN:{type:String},
     photo:{type:String},
@@ -21,22 +21,3 @@ let doc= new Schema({
 
 module.exports=doc;
 
-/*
-First Name
-Last Name
-Gender
-Date of Birth
-Qualification
-Specialization (eg Cardiology, Oncology, Pediatrics)
-Hospital/Clinic Name
-Experience
-Mobile Number
-Email ID
-Address
-Medical Registration Number 
-Uploads -
-ID Proof
-Photo
-Signature
-
-*/

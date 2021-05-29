@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
-
+const db=require("../utility/db");
 /* GET home page. */
-router.get('/', function(req, res, next) {
- res.redirect("/login");
+router.get('/', async function(req, res, next) {
+ 
+  res.redirect("/login");
 });
 
 router.get('/temp', function(req, res, next) {
@@ -11,6 +12,7 @@ router.get('/temp', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
+  
   res.render('login', { title: 'login',data:{auth:false} });
 });
 
@@ -24,7 +26,7 @@ router.get('/create', function(req, res, next) {
   res.render('sessionform', { title: 'session',data:{auth:true} });
 });
 router.get('/profile', function(req, res, next) {
-  res.render('profile', { title: 'profile',data:{} });
+  res.render('profile', { title: 'profile',data:{auth:true} });
 });
 
 module.exports = router;
