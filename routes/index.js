@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+ res.redirect("/login");
 });
 
 router.get('/temp', function(req, res, next) {
@@ -11,17 +11,17 @@ router.get('/temp', function(req, res, next) {
 });
 
 router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'login',data:{} });
+  res.render('login', { title: 'login',data:{auth:false} });
 });
 
 router.get('/dashboard/:id', function(req, res, next) {
-  res.render('dashboard', { title: 'dashboard',data:{} });
+  res.render('dashboard', { title: 'dashboard',data:{auth:true} });
 });
 router.get('/previous/:id', function(req, res, next) {
-  res.render('prev', { title: 'Previous Sessions',data:{} });
+  res.render('prev', { title: 'Previous Sessions',data:{auth:true} });
 });
 router.get('/create', function(req, res, next) {
-  res.render('sessionform', { title: 'session',data:{} });
+  res.render('sessionform', { title: 'session',data:{auth:true} });
 });
 router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'profile',data:{} });
