@@ -14,8 +14,10 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'login',data:{} });
 });
 
-router.get('/dashboard', function(req, res, next) {
+router.get('/dashboard/:id', function(req, res, next) {
   res.render('dashboard', { title: 'dashboard',data:{} });
 });
-
+router.get('/previous/:id', function(req, res, next) {
+  res.render('prev', { title: 'Previous Sessions',data:{} });
+});
 module.exports = router;
