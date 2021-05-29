@@ -150,7 +150,7 @@ router.post("/reg",async (req,res)=>{
   }
 });
 
-router.get('/udashboard/:id',function(req, res, next) {
+router.get('/udashboard',function(req, res, next) {
   res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
 });
 
@@ -214,5 +214,10 @@ router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
 
+
+router.post('/getSession',(req,res)=>{
+  console.log(req.body);
+  res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
+});
 
 module.exports = router;
