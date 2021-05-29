@@ -1,4 +1,4 @@
-# ArogyaVarta
+# AarogyaVarta
 
 # Problem Statement:
 Develop a Web-based software to facilitate Online Group Medical Consultations by connecting multiple Patients having Covid Symptoms with a single Doctor at a time, such that The Medical Fraternity can widen its scope for reaching and treating numerous patients in the minimum possible time irrespective of the physical distance between them in the lethal Covid 19 Pandemic. Patients need to be smartly grouped through the software on the basis of various parameters such that the same consultation is applicable to a set of people. The platform should aid patients to receive the most suitable medical guidance and treatment by channelizing them to appropriate treatment programmes according to their health condition. This project should effectively bridge the communication gap between doctors and patients due to the rising pandemic.
