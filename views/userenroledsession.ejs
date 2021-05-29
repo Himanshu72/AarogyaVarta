@@ -18,191 +18,6 @@
 <body>
 <%- include('common/navbar',{auth:data.auth}); %>
 
-
-<div class="card m-2">
-    <div class="card-body">
-        <form action="/reg" method="POST">
-            <div class="row m-2">
-                <div class="col-md-2">
-                    <label>My age group </label>
-                </div>
-                <div class="col">
-                    <label class="btn btn-outline-secondary">0-2 years</label>
-                </div>
-                <div class="col-md-1">
-                    <button type="button" class="btn btn-outline-secondary">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                </div>
-            </div>
-
-            <div class="row m-2">
-                <div class="col-md-2">
-                    <label>My Comorbidity </label>
-                </div>
-                <div class="col">
-                    <label class="btn btn-outline-secondary">Cancer</label>
-                    <label class="btn btn-outline-secondary">Chronic kidney disease</label>
-                    <label class="btn btn-outline-secondary">Chronic lung diseases</label>
-                    <label class="btn btn-outline-secondary">Asthma</label>
-                    <label class="btn btn-outline-secondary">Diabetes</label>
-                </div>
-                <div class="col-md-1">
-                    <button type="button" class="btn btn-outline-secondary">
-                        <i class="fas fa-edit"></i>
-                    </button>
-                </div>
-            </div>
-
-
-            <div class="row m-2">
-                <label class="m-2 col-md-4 col-sm-12" for="session_topic">Symptoms: </label>
-                <div class="row m-2">
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Headache
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Fever
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Body pain
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Cough
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Diarrhea
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Nasal Congestion
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Tiredness
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Sore Throat
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Persistent pain
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Trouble Breathing
-                        </label>
-                    </div>
-
-                    <div class="form-check col-md-4 col-sm-6">
-                        <input
-                                class="form-check-input"
-                                type="checkbox"
-                                name="flexRadioDefault"
-                                id="flexRadioDefault1"
-                        />
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Stay Awake
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-12" style="display: flex;justify-content: center;">
-                    <button type="button" class="btn btn-outline-secondary">
-                        <i class="fas fa-search"></i> Find New Session
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="row m-2 mt-4">
     <div class="col-md-4">
         <div class="card">
@@ -309,7 +124,7 @@
                                     1-2 pm:
                                 </div>
                                 <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
                                 </div>
 
                             </div>
@@ -426,7 +241,7 @@
                                     1-2 pm:
                                 </div>
                                 <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
                                 </div>
 
                             </div>
@@ -543,7 +358,7 @@
                                     1-2 pm:
                                 </div>
                                 <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
+                                    <a href="#" class="btn btn-primary">Join Meet</a>
                                 </div>
 
                             </div>

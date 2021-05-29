@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+
+    <%- include('common/links'); %>
+</head>
+
+<body>
+<%- include('common/navbar',{auth:data.auth}); %>
+<div class="container-fluid" style="padding: 3%">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/reg" method="POST">
+                        <div class="row">
+                            <div class="col-sm-12 m-2">
+                                <h6 class="mb-0">Name</h6>
+                            </div>
+                            <input
+                                    class="col-sm-5 m-2"
+                                    name="fname"
+                                    placeholder="First Name"
+                            />
+                            <input
+                                    class="col-sm-5 m-2"
+                                    name="lname"
+                                    placeholder="Last Name"
+                            />
+                        </div>
+                        <hr />
+                        <div class="row">
+                            <div class="col-sm-2 m-2">
+                                <h6 class="mb-0">Gender</h6>
+                            </div>
+                            <select name="gender" class="col-sm-3 m-2">
+                                <option value="-1" selected disabled>Select</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+
+                            <div class="col-sm-2 m-2">
+                                <h6 class="mb-0">DOB</h6>
+                            </div>
+                            <input name="DOB" type="date" class="col-sm-3 m-2" />
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-sm-5 m-2">
+                                <h6 class="mb-0">Phone</h6>
+                            </div>
+                            <div class="col-sm-5 m-2">
+                                <h6 class="mb-0">Email</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <input
+                                    name="phone"
+                                    class="col-sm-5 m-2 "
+                                    placeholder="phone number"
+                            />
+                            <input
+                                    name="email"
+                                    class="col-sm-5 m-2 "
+                                    placeholder="email"
+                            />
+                        </div>
+                        <hr/>
+
+                        <div class="row">
+                            <div class="col-sm-2 m-2">
+                                <h6 class="mb-0">Address</h6>
+                            </div>
+                            <textarea
+                                    name="address"
+                                    class="col-sm-8 m-2"
+                                    placeholder="Address"
+                            ></textarea>
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-sm-12 m-2">
+                                <h6 class="mb-0">Emergency Contact Name</h6>
+                            </div>
+                            <input
+                                    class="col-sm-5 m-2"
+                                    name="ename"
+                                    placeholder="Emergency Contact Name"
+                            />
+                        </div>
+                        <hr />
+
+                        <div class="row">
+                            <div class="col-sm-12 m-2">
+                                <h6 class="mb-0">Emergency Contact Mobile</h6>
+                            </div>
+                            <input
+                                    class="col-sm-5 m-2"
+                                    name="ephone"
+                                    placeholder="Emergency Contact Mobile Number"
+                            />
+                        </div>
+                        <hr />
+
+                        <label class="m-2 col-md-4 col-sm-12" for="session_topic">Comorbidity: </label>
+                        <div class="row m-2">
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Cancer
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Chronic kidney disease
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Chronic lung diseases
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Asthma
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    interstitial lung disease
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Cystic fibrosis
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Dementia
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Pulmonary hypertension
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Diabetes
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Down syndrome
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Heart conditions
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    HIV infection
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Uncompromised state
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Liver disease
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Overweight and obesity
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Pregnancy
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Stroke
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Solid organ
+                                </label>
+                            </div>
+
+                            <div class="form-check col-md-6 col-sm-8">
+                                <input
+                                        class="form-check-input"
+                                        type="checkbox"
+                                        name="flexRadioDefault"
+                                        id="flexRadioDefault1"
+                                />
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Sickle cell disease
+                                </label>
+                            </div>
+
+                        </div>
+                        <hr/>
+
+                        <div class="row">
+                            <div class="col-sm-3 m-2">
+                                <h6 class="mb-0">ID Proof</h6>
+                            </div>
+                            <input name="proof" type="file" class="col-sm-5 m-2" />
+                        </div>
+                        <div class="col-12" style="display: flex; justify-content: center">
+                            <button class="perbtn">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/reg.svg" alt="img" class="img-fluid" />
+        </div>
+    </div>
+</div>
+<%- include('common/footer'); %>
+</body>
+</html>

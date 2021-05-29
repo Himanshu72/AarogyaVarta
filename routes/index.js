@@ -110,4 +110,11 @@ router.post("/login",async (req,res)=>{
 });
 
 
+router.get('/usession', function(req, res, next) {
+  res.render('userenroledsession', { title: 'session',data:{auth:true} });
+});
+
+router.get('/uregistration', function(req, res, next) {
+  res.render('ureg', { title: 'registration',data:{auth:true} });
+});
 module.exports = router;
