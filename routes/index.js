@@ -33,4 +33,18 @@ router.get('/registration', function(req, res, next) {
   res.render('reg', { title: 'registration',data:{auth:false} });
 });
 
+router.post("/reg",async (req,res)=>{
+  try{  
+  console.log(req.body);
+    req.body.name={};
+    req.body.name.fname=req.body.fname;
+    req.body.name.fname=req.body.lname;
+    await db.insertDoc(req.body);  
+    res.redirect("/login");
+  }catch(err){
+    console.log(err);
+    res.redirect("/registration?code=1");
+  }
+});
+
 module.exports = router;

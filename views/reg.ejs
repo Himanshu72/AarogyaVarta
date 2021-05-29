@@ -1,184 +1,170 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title><%= title %></title>
 
     <%- include('common/links'); %>
-</head>
+  </head>
 
-<body>
-<%- include('common/navbar',{auth:data.auth}); %>
-<div class="container-fluid" style="padding: 3%">
-    <div class="row">
+  <body>
+    <%- include('common/navbar',{auth:data.auth}); %>
+    <div class="container-fluid" style="padding: 3%">
+      <div class="row">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-body">
-                    <form>
-                        <div class="row">
-                            <div class="col-sm-12 m-2">
-                                <h6 class="mb-0">Name</h6>
-                            </div>
-                            <input
-                                    class="col-sm-5 m-2 "
-                                    name="fname"
-                                    placeholder="First Name"/>
-                            <input
-                                    class="col-sm-5 m-2 "
-                                    name="lname"
-                                    placeholder="Last Name"/>
-                        </div>
-                        <hr/>
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Gender</h6>
-                            </div>
-                            <select name="gender" class="col-sm-3 m-2 ">
-                                <option>Select</option>
-                                <option>Male</option>
-                                <option>Female</option>
-                            </select>
-
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">DOB</h6>
-                            </div>
-                            <input
-                                    name="DOB"
-                                    type="date"
-                                    class="col-sm-3 m-2 "/>
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Qualification</h6>
-                            </div>
-                            <input
-                                    name="qualification"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="Qualification"
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Specialization</h6>
-                            </div>
-                            <input
-                                    name="specialization"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="Specialization"
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Hospital / Clinic</h6>
-                            </div>
-                            <textarea
-                                    name="hospital"
-                                    class="col-sm-8 m-2 "
-                                    placeholder="Hospital"
-                            ></textarea>
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Experience</h6>
-                            </div>
-                            <input
-                                    name="Experiance"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="Years"
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-5 m-2">
-                                <h6 class="mb-0">Phone</h6>
-                            </div>
-                            <div class="col-sm-5 m-2">
-                                <h6 class="mb-0">Mobile</h6>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input
-                                    name="phone"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="phone number"
-                            />
-                            <input
-                                    name="phone"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="mobile number"
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Email</h6>
-                            </div>
-                            <input
-                                    name="email"
-                                    class="col-sm-5 m-2 "
-                                    placeholder="email"
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-2 m-2">
-                                <h6 class="mb-0">Address</h6>
-                            </div>
-                            <textarea
-                                    name="address"
-                                    class="col-sm-8 m-2 "
-                                    placeholder="Address"></textarea>
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-3 m-2">
-                                <h6 class="mb-0">Medical Registration Number</h6>
-                            </div>
-                            <input
-                                    name="MRN"
-                                    type="file"
-                                    class="col-sm-5 m-2 "
-
-                            />
-                        </div>
-                        <hr/>
-
-                        <div class="row">
-                            <div class="col-sm-3 m-2">
-                                <h6 class="mb-0">ID Proof</h6>
-                            </div>
-                            <input
-                                    name="proof"
-                                    type="file"
-                                    class="col-sm-5 m-2 "
-
-                            />
-                        </div>
-                        <div class="col-12" style="display: flex; justify-content: center">
-                            <button class="perbtn">
-                                Submit
-                            </button>
-                        </div>
-                    </form>
+          <div class="card">
+            <div class="card-body">
+              <form action="/reg" method="POST">
+                <div class="row">
+                  <div class="col-sm-12 m-2">
+                    <h6 class="mb-0">Name</h6>
+                  </div>
+                  <input
+                    class="col-sm-5 m-2"
+                    name="fname"
+                    placeholder="First Name"
+                  />
+                  <input
+                    class="col-sm-5 m-2"
+                    name="lname"
+                    placeholder="Last Name"
+                  />
                 </div>
+                <hr />
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Gender</h6>
+                  </div>
+                  <select name="gender" class="col-sm-3 m-2">
+                    <option value="-1" selected disabled>Select</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">DOB</h6>
+                  </div>
+                  <input name="DOB" type="date" class="col-sm-3 m-2" />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Qualification</h6>
+                  </div>
+                  <input
+                    name="qualification"
+                    class="col-sm-5 m-2"
+                    placeholder="Qualification"
+                  />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Specialization</h6>
+                  </div>
+                  <input
+                    name="specialization"
+                    class="col-sm-5 m-2"
+                    placeholder="Specialization"
+                  />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Hospital / Clinic</h6>
+                  </div>
+                  <textarea
+                    name="hospital"
+                    class="col-sm-8 m-2"
+                    placeholder="Hospital"
+                  ></textarea>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Experience</h6>
+                  </div>
+                  <input
+                    name="Experiance"
+                    class="col-sm-5 m-2"
+                    placeholder="Years"
+                  />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-5 m-2">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-5 m-2">
+                    <h6 class="mb-0">Mobile</h6>
+                  </div>
+                </div>
+                <div class="row">
+                  <input
+                    name="phone"
+                    class="col-sm-5 m-2"
+                    placeholder="phone number"
+                  />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Email</h6>
+                  </div>
+                  <input
+                    name="email"
+                    class="col-sm-5 m-2"
+                    placeholder="email"
+                  />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-2 m-2">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <textarea
+                    name="address"
+                    class="col-sm-8 m-2"
+                    placeholder="Address"
+                  ></textarea>
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 m-2">
+                    <h6 class="mb-0">Medical Registration Number</h6>
+                  </div>
+                  <input name="MRN" type="file" class="col-sm-5 m-2" />
+                </div>
+                <hr />
+
+                <div class="row">
+                  <div class="col-sm-3 m-2">
+                    <h6 class="mb-0">ID Proof</h6>
+                  </div>
+                  <input name="proof" type="file" class="col-sm-5 m-2" />
+                </div>
+                <div
+                  class="col-12"
+                  style="display: flex; justify-content: center"
+                >
+                  <button class="perbtn">Submit</button>
+                </div>
+              </form>
             </div>
+          </div>
         </div>
         <div class="col-md-6">
-            <img src="/images/reg.svg" alt="img" class="img-fluid"/>
+          <img src="/images/reg.svg" alt="img" class="img-fluid" />
         </div>
+      </div>
     </div>
-</div>
-<%- include('common/footer'); %>
-</body>
+    <%- include('common/footer'); %>
+  </body>
 </html>
