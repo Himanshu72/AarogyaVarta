@@ -103,8 +103,8 @@
                                     <h6 class="mb-0">Gender</h6>
                                 </div>
                                 <select name="gender" class="col-sm-3 m-2 editable" disabled>
-                                    <option>Male</option>
-                                    <option>Female</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
                                 </select>
 
                                 <div class="col-sm-2 m-2">
@@ -157,27 +157,24 @@
                                     <h6 class="mb-0">Phone</h6>
                                 </div>
                                 <div class="col-sm-5 m-2">
-                                    <h6 class="mb-0">Mobile</h6>
-                                </div>
-
-                            </div>
-                            <div class="row">
-                                <input name="phone" class="col-sm-5 m-2 editable" value="(239) 816-9029" disabled=""
-                                       placeholder="First"/>
-                                <input name="phone" class="col-sm-5 m-2 editable" value="(320) 380-4539" disabled=""
-                                       placeholder="First"/>
-                            </div>
-                            <hr>
-
-                            <div class="row">
-                                <div class="col-sm-2 m-2">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <input name="email" class="col-sm-5 m-2 editable" value="fip@jukmuh.al" disabled=""
-                                       placeholder="First"/>
                             </div>
-                            <hr>
-
+                            <div class="row">
+                                <input
+                                        name="phone"
+                                        class="col-sm-5 m-2 "
+                                        placeholder="phone number"
+                                        value="(239) 816-9029" disabled=""
+                                />
+                                <input
+                                        name="email"
+                                        class="col-sm-5 m-2 "
+                                        placeholder="email"
+                                        value="fip@jukmuh.al" disabled=""
+                                />
+                            </div>
+                            <hr/>
 
                             <div class="row">
                                 <div class="col-sm-2 m-2">
@@ -199,14 +196,14 @@
                             <hr>
 
                             <div class="row">
-                                <div class="col-sm-2 m-2">
+                                <div class="col-sm-3 m-2">
                                     <h6 class="mb-0">ID Proof</h6>
                                 </div>
                                 <input name="proof" type="file" class="col-sm-5 m-2 editable" value="fip@jukmuh.al"
                                        disabled=""
                                        placeholder="First"/>
                             </div>
-                            <div class="col-5" style="display: flex;justify-content: flex-end;">
+                            <div class="col-12" style="display: flex;justify-content: flex-end;">
                                 <button type="button" class="perbtn m-2" onclick="allowEditing();"> Edit</button>
                                 <button class="perbtn m-2"> Submit</button>
                             </div>
