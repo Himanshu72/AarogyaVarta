@@ -6,229 +6,232 @@
         <%= title %>
     </title>
     <style>
-        input{
+        input {
             width: 100%;
             margin: 0.3%;;
         }
-        </style>
+    </style>
     <%- include('common/links'); %>
 </head>
 
 
 <body>
 <%- include('common/navbar',{auth:data.auth}); %>
-        <div class="container-fluid">
-            <div class="row" style="margin-top: 1%">
-                <div class="col col-md-12">
-                    <a href="/create">
-                    <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark">
-                        <i class="fas fa-plus"></i>
-                        Create Session
-                    </button>
-                    </a>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <%if(data.sessions.length > 0){%>
-                    <%data.sessions.forEach((ele,index)=>{%>
-                <div class="col-md-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"><%=ele.topic%></h5>
-                            <p class="card-text">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <strong>Description:</strong>
-                                </div>
-                                <div class=" col-md-8">
-                                    <%=ele.description%>
-                                </div>
-                            </div>
-
-                            </p>
-                            <p>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <strong>SessionLink:</strong>
-                                </div>
-                                <div class=" col-md-8">
-                                    <%=ele.session%>
-                                </div>
-                            </div>
-                            </p>
-                            <p>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <strong>Prescription:</strong>
-                                </div>
-                                <div class=" col-md-8">
-                                    <a href="/data/<%=ele.prescription%>" target="_blank"> prescription.pdf </a>
-                                </div>
-                            </div>
-                            </p>
-                            <p>
-                            <div class="row">
-                                <div class=" col-md-4">
-                                    <strong>Age Group:</strong>
-                                </div>
-                                <div class="col-md-8">
-                                    <% let arr=ele.age.split("-")%>
-                                    <%let f,l %>
-                                    <%if( arr[0][arr[0].length - 1]=='Y'){%>
-                                       <%f= arr[0].substring(0,arr[0].length - 1) +"Year"%>
-                                        <%}else{%>
-                                        
-                                            <%f= arr[0].substring(0,arr[0].length - 1) +"Monthe"%>
-                                            <%}%>
-                                            <%if( arr[1][arr[1].length - 1]=='Y'){%>
-                                                <%l= arr[1].substring(0,arr[1].length - 1) +"Year"%>
-                                                 <%}else{%>
-                                                 
-                                                     <%l= arr[1].substring(0,arr[1].length - 1) +"Monthe"%>
-                                                     <%}%>   
-                                                     <%=f%>-<%=l%>
-                                            
-                                </div>
-                            </div>
-                            </p>
-
-                            <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                                href="#c<%=index%>">
-                                <!-- Buttons trigger collapse -->
-                                <strong role="button" aria-expanded="false" aria-controls="c<%=index%>">
-                                    Comorbidities <i class="fas fa-chevron-down"></i>
-                                </strong>
-                            <div class="collapse mt-3" id="c<%=index%>">
-                                <%ele.comborbidities.forEach((e)=>{%>
-                                <span class="badge rounded-pill bg-danger"><%=e%></span>
-                               <%})%>
-                            </div>
-
-                            </p>
-                            <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                                href="#d<%=index%>">
-                                <!-- Buttons trigger collapse -->
-                                <strong role="button" aria-expanded="false" aria-controls="d<%=index%>">
-                                    Symptoms <i class="fas fa-chevron-down"></i>
-                                </strong>
-                            <div class="collapse mt-3" id="d<%=index%>">
-                                <%ele.Symptons.forEach((e)=>{%>
-                                <span class="badge rounded-pill bg-warning"><%=e%></span>
-                                <%});%>
-                                
-                            </div>
-
-                            </p>
-
-
-                            <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                            href="#e<%=index%>">
-                            <!-- Buttons trigger collapse -->
-                            <strong role="button" aria-expanded="false" aria-controls="e<%=index%>">
-                                Follow-up Meetings <i class="fas fa-chevron-down"></i>
-                            </strong>
-                        <div class="collapse mt-3 text-center" id="e<%=index%>"" >
-                           <ul style="list-style: none;  margin: 0; padding: 0px;">
-                            <%ele.meet.forEach(e=>{%> 
-                                <%let cur=data.meets.find(d=>d._id==e)%>
-                                <
-                            <li style="background: rgb(240, 234, 234); padding:0.1% ; ">                            <div class="row" >
-                                
-                                <div class="col-6">
-                                    <i class="far fa-calendar-alt text-success"></i>  <%=cur.shedule.toISOString().substring(0,10)%>
-                                </div>
-
-                              <div class="col-6" >
-                                <i class="far fa-edit text-warning"></i> edit
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row" >
-                                <div class="col-6">
-                                    <%=cur.shedule.toISOString().substring(11,16)%>
-                                </div>
-                                <div class="col-6">
-                                    <a href="<%=cur.link%>"  target="_blank" class="btn btn-primary">Join Meet</a>
-                                </div>
-                              
-                            </div>
-                                 </li>
-                                 <%})%>
-
-                                </ul>
-                                </div>
-                                <br />
-                        
-                        
-
-                        </p>
-                            <button type="button" onclick="btn(this)" data-sis="60b27877dc348e4738122d1f" data-mdb-toggle="modal"
-                            data-mdb-target="#exampleModal" class="btn btn-outline-primary"><i class="fas fa-plus"></i> Shedule New Meet</button>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 1%">
+        <div class="col col-md-12">
+            <a href="/create">
+                <button type="button" class="btn btn-outline-secondary" data-mdb-ripple-color="dark">
+                    <i class="fas fa-plus"></i>
+                    Create Session
+                </button>
+            </a>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <% if(data.sessions.length > 0){ %>
+        <% data.sessions.forEach((ele, index)=>{ %>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center"><%= ele.topic %></h5>
+                    <p class="card-text">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong>Description:</strong>
+                        </div>
+                        <div class=" col-md-8">
+                            <%= ele.description %>
                         </div>
                     </div>
+
+                    </p>
+                    <p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong>SessionLink:</strong>
+                        </div>
+                        <div class=" col-md-8">
+                            <%= ele.session %>
+                        </div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong>Prescription:</strong>
+                        </div>
+                        <div class=" col-md-8">
+                            <a href="/data/<%= ele.prescription %>" target="_blank"> prescription.pdf </a>
+                        </div>
+                    </div>
+                    </p>
+                    <p>
+                    <div class="row">
+                        <div class=" col-md-4">
+                            <strong>Age Group:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <% let arr = ele.age.split("-") %>
+                            <% let f, l %>
+                            <% if( arr[0][arr[0].length - 1] == 'Y'){ %>
+                            <% f= arr[0].substring(0, arr[0].length - 1) + "Year" %>
+                            <% }else{ %>
+
+                            <% f= arr[0].substring(0, arr[0].length - 1) + "Monthe" %>
+                            <% } %>
+                            <% if( arr[1][arr[1].length - 1] == 'Y'){ %>
+                            <% l= arr[1].substring(0, arr[1].length - 1) + "Year" %>
+                            <% }else{ %>
+
+                            <% l= arr[1].substring(0, arr[1].length - 1) + "Monthe" %>
+                            <% } %>
+                            <%= f %>-<%= l %>
+
+                        </div>
+                    </div>
+                    </p>
+
+                    <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                       href="#c<%= index %>">
+                        <!-- Buttons trigger collapse -->
+                        <strong role="button" aria-expanded="false" aria-controls="c<%= index %>">
+                            Comorbidities <i class="fas fa-chevron-down"></i>
+                        </strong>
+                    <div class="collapse mt-3" id="c<%= index %>">
+                        <% ele.comborbidities.forEach((e)=>{ %>
+                        <span class="badge rounded-pill bg-danger"><%= e %></span>
+                        <% }) %>
+                    </div>
+
+                    </p>
+                    <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                       href="#d<%= index %>">
+                        <!-- Buttons trigger collapse -->
+                        <strong role="button" aria-expanded="false" aria-controls="d<%= index %>">
+                            Symptoms <i class="fas fa-chevron-down"></i>
+                        </strong>
+                    <div class="collapse mt-3" id="d<%= index %>">
+                        <% ele.Symptons.forEach((e)=>{ %>
+                        <span class="badge rounded-pill bg-warning"><%= e %></span>
+                        <% }); %>
+
+                    </div>
+
+                    </p>
+
+
+                    <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
+                       href="#e<%= index %>">
+                        <!-- Buttons trigger collapse -->
+                        <strong role="button" aria-expanded="false" aria-controls="e<%= index %>">
+                            Follow-up Meetings <i class="fas fa-chevron-down"></i>
+                        </strong>
+                    <div class="collapse mt-3 text-center" id="e<%= index %>" >
+                    <ul style="list-style: none;  margin: 0; padding: 0px;">
+                        <% ele.meet.forEach(e=>{ %>
+                            <% let cur = data.meets.find(d => d._id == e) %>
+                            <li style="background: rgb(240, 234, 234); padding:0.1% ; ">
+                                <div class="row">
+
+                                    <div class="col-6">
+                                        <i class="far fa-calendar-alt text-success"></i> <%= cur.shedule.toISOString().substring(0, 10) %>
+                                    </div>
+
+                                    <div class="col-6">
+                                        <i class="far fa-edit text-warning"></i> edit
+                                    </div>
+                                </div>
+                                <br/>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <%= cur.shedule.toISOString().substring(11, 16) %>
+                                    </div>
+                                    <div class="col-6">
+                                        <a href="<%= cur.link %>" target="_blank" class="btn btn-primary">Join Meet</a>
+                                    </div>
+
+                                </div>
+                            </li>
+                        <% }) %>
+
+                    </ul>
                 </div>
-                <%})%>
-                <%}%>
+                <br/>
+
+
+                </p>
+                <button type="button" onclick="btn(this)" data-sis="60b27877dc348e4738122d1f" data-mdb-toggle="modal"
+                        data-mdb-target="#exampleModal" class="btn btn-outline-primary"><i class="fas fa-plus"></i>
+                    Shedule New Meet
+                </button>
             </div>
         </div>
-
-        <div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Create Meet</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-mdb-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <form action="/meet/1" id="mform" method="POST">
-      <div class="modal-body">
-        <div class="form-outline"  >
-            <input type="text" name="link" placeholder="Enter Meet Link"  />
-        </div> <br />
-          <div class="form-outline"  >
-            <input type="datetime-local" name="shedule"  />
-            
-          </div><br />
-          <div class="form-outline">   
-            <input type="number" name="duration"  placeholder="Enter Meet Duration" />
-          </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-          Close
-        </button>
-        <button  class="btn btn-primary"><i class="fas fa-plus"></i> Create</button>
-      </div>
-      </form>
     </div>
-  </div>
+    <% }) %>
+    <% } %>
 </div>
-        <%- include('common/footer'); %>
-        <script>
-        function btn(e){
-            let sid=e.dataset.sis;
-            document.querySelector("#mform").action="/meet/"+sid;
+</div>
+
+<div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Create Meet</h5>
+                <button
+                        type="button"
+                        class="btn-close"
+                        data-mdb-dismiss="modal"
+                        aria-label="Close"
+                ></button>
+            </div>
+            <form action="/meet/1" id="mform" method="POST">
+                <div class="modal-body">
+                    <div class="form-outline">
+                        <input type="text" name="link" placeholder="Enter Meet Link"/>
+                    </div>
+                    <br/>
+                    <div class="form-outline">
+                        <input type="datetime-local" name="shedule"/>
+
+                    </div>
+                    <br/>
+                    <div class="form-outline">
+                        <input type="number" name="duration" placeholder="Enter Meet Duration"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                        Close
+                    </button>
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include('common/footer'); %>
+<script>
+    function btn(e) {
+        let sid = e.dataset.sis;
+        document.querySelector("#mform").action = "/meet/" + sid;
 
 
-        }
-        </script>
-         <script>
-            <%if(alert.type!=""){%>
-            swal("<%=alert.title%>", "<%=alert.msg%>", "<%=alert.type%>");
-            <%}%>
-          </script>
-        
+    }
+</script>
+<script>
+    <% if(alert.type != ""){ %>
+    swal("<%= alert.title %>", "<%= alert.msg %>", "<%= alert.type %>");
+    <% } %>
+</script>
+
 </body>
 
 </html>
