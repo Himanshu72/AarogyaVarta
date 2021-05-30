@@ -622,6 +622,11 @@
     <%})%>
 </div>
 <%- include('common/footer'); %>
+
+<style>
+  .rw-conversation-container .rw-header {background-color: #0dcaf0}
+  .rw-conversation-container .rw-messages-container .rw-message .rw-client {background-color: #0dcaf0}
+</style>
 <script>!(function () {
   let e = document.createElement("script"),
     t = document.head || document.getElementsByTagName("head")[0];
@@ -635,6 +640,8 @@
           initPayload : '/greet',
           customData: { language: "en" },
           socketUrl: "http://localhost:5005",
+          title: "VartaBot",
+
           // add other props here
         },
         null
