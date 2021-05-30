@@ -499,32 +499,35 @@
 </div>
 
 <div class="row m-2 mt-4">
+    
+<% data.rec.forEach((e,index)=>{ %>
+    <%let cur=data.docs.find(d=>d._id==e.docID);  %>
+   
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
 
                 <div class="row" style="padding-top: 6%;">
                     <div class="col-md-4">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
+                        <img src="./data/<%=cur.photo%>"
                              class="img-thumbnail"
                              alt="..."/>
                     </div>
                     <div class="col-md-8">
-                        Doctor name : Vishwam panyda <br>
-                        Qualification : MscIt<br>
-                        Organization : Daiict
+                       <b> Doctor name : </b><%=cur.name.fname%> <%=cur.name.lname%>  <br>
+                        <b>Qualification</b> :<%=cur.qualification%><br>
+                        <b>Organization</b> : <%=cur.hospital%>
                     </div>
                 </div>
 
-                <h5 class="card-title mt-4">Topic</h5>
+                <h5 class="card-title mt-4"><%=e.topic%></h5>
                 <p class="card-text">
                 <div class="row">
                     <div class="col-md-4">
                         <strong>Description:</strong>
                     </div>
                     <div class=" col-md-8">
-                        Some quick example text to build on the card title and make up
-                        the bulk of the card's content.
+                       <%=e.description%>
                     </div>
                 </div>
 
@@ -535,7 +538,7 @@
                         <strong>SessionLink:</strong>
                     </div>
                     <div class=" col-md-8">
-                        www.youtube.com
+                            <a href="<%=e.session%>" target="_blank">session</a>
                     </div>
                 </div>
                 </p>
@@ -545,70 +548,70 @@
                         <strong>Age Group:</strong>
                     </div>
                     <div class="col-md-8">
-                        12-18
+                        <%=e.age%>
                     </div>
                 </div>
                 </p>
 
                 <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample">
+                   href="#a<%=index%>">
                     <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <strong role="button" aria-expanded="false" aria-controls="a<%=index%>">
                         Comorbidities <i class="fas fa-chevron-down"></i>
                     </strong>
-                <div class="collapse mt-3" id="collapseExample">
-
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
+                <div class="collapse mt-3" id="a<%=index%>">
+                    <%e.comborbidities.forEach(a=>{%>
+                    <span class="badge rounded-pill bg-danger"><%=a%></span>
+                    <%})%>
                 </div>
 
                 </p>
                 <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample3">
+                   href="#b<%=index%>">
                     <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
+                    <strong role="button" aria-expanded="false" aria-controls=b<%=index%>">
                         Symptoms <i class="fas fa-chevron-down"></i>
                     </strong>
-                <div class="collapse mt-3" id="collapseExample3">
-
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
+                <div class="collapse mt-3" id="b<%=index%>">
+                   <%e.Symptons.forEach(s=>{%> 
+                    <span class="badge rounded-pill bg-warning"><%=s%></span>
+                   <%})%>
                 </div>
 
                 </p>
 
 
                 <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample2">
+                   href="#e<%=index%>">
                     <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
+                    <strong role="button" aria-expanded="false" aria-controls="e<%=index%>">
                         Follow-up Meetings <i class="fas fa-chevron-down"></i>
                     </strong>
-                <div class="collapse mt-3 text-center" id="collapseExample2">
+                <div class="collapse mt-3 text-center" id="e<%=index%>">
                     <ul style="list-style: none;  margin: 0; padding: 0px;">
+                     <%e.meet.forEach(m=>{%>   
+                       <%let cur=data.meets.find(mm=>mm._id==m)%>
+                       <%console.log("Meet=>",cur)%>
                         <li style="background: rgb(240, 234, 234); padding:1% ; ">
                             <div class="row">
 
                                 <div class="col-6">
-                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
+                                    <i class="far fa-calendar-alt text-success"></i> <%=cur.shedule.toISOString().substring(0,10)%>
                                 </div>
 
                             </div>
                             <br/>
                             <div class="row">
                                 <div class="col-6">
-                                    1-2 pm:
+                                    <%=cur.shedule.toISOString().substring(11,16)%>
                                 </div>
                                 <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
+                                    <a href="<%=cur.link%>" target="_blank" class="btn btn-primary">Join Meet</a>
                                 </div>
 
                             </div>
                         </li>
+                        <%})%>
                     </ul>
                 </div>
                 <br/>
@@ -616,240 +619,7 @@
             </div>
         </div>
     </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-
-                <div class="row" style="padding-top: 6%;">
-                    <div class="col-md-4">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
-                             class="img-thumbnail"
-                             alt="..."/>
-                    </div>
-                    <div class="col-md-8">
-                        Doctor name : Vishwam panyda <br>
-                        Qualification : MscIt<br>
-                        Organization : Daiict
-                    </div>
-                </div>
-
-                <h5 class="card-title mt-4">Topic</h5>
-                <p class="card-text">
-                <div class="row">
-                    <div class="col-md-4">
-                        <strong>Description:</strong>
-                    </div>
-                    <div class=" col-md-8">
-                        Some quick example text to build on the card title and make up
-                        the bulk of the card's content.
-                    </div>
-                </div>
-
-                </p>
-                <p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <strong>SessionLink:</strong>
-                    </div>
-                    <div class=" col-md-8">
-                        www.youtube.com
-                    </div>
-                </div>
-                </p>
-                <p>
-                <div class="row">
-                    <div class=" col-md-4">
-                        <strong>Age Group:</strong>
-                    </div>
-                    <div class="col-md-8">
-                        12-18
-                    </div>
-                </div>
-                </p>
-
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Comorbidities <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3" id="collapseExample">
-
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                </div>
-
-                </p>
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample3">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
-                        Symptoms <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3" id="collapseExample3">
-
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                </div>
-
-                </p>
-
-
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample2">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
-                        Follow-up Meetings <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3 text-center" id="collapseExample2">
-                    <ul style="list-style: none;  margin: 0; padding: 0px;">
-                        <li style="background: rgb(240, 234, 234); padding:1% ; ">
-                            <div class="row">
-
-                                <div class="col-6">
-                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
-                                </div>
-
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-6">
-                                    1-2 pm:
-                                </div>
-                                <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
-                                </div>
-
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <br/>
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="card">
-            <div class="card-body">
-
-                <div class="row" style="padding-top: 6%;">
-                    <div class="col-md-4">
-                        <img src="https://mdbootstrap.com/img/new/standard/city/041.jpg"
-                             class="img-thumbnail"
-                             alt="..."/>
-                    </div>
-                    <div class="col-md-8">
-                        Doctor name : Vishwam panyda <br>
-                        Qualification : MscIt<br>
-                        Organization : Daiict
-                    </div>
-                </div>
-
-                <h5 class="card-title mt-4">Topic</h5>
-                <p class="card-text">
-                <div class="row">
-                    <div class="col-md-4">
-                        <strong>Description:</strong>
-                    </div>
-                    <div class=" col-md-8">
-                        Some quick example text to build on the card title and make up
-                        the bulk of the card's content.
-                    </div>
-                </div>
-
-                </p>
-                <p>
-                <div class="row">
-                    <div class="col-md-4">
-                        <strong>SessionLink:</strong>
-                    </div>
-                    <div class=" col-md-8">
-                        www.youtube.com
-                    </div>
-                </div>
-                </p>
-                <p>
-                <div class="row">
-                    <div class=" col-md-4">
-                        <strong>Age Group:</strong>
-                    </div>
-                    <div class="col-md-8">
-                        12-18
-                    </div>
-                </div>
-                </p>
-
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample">
-                        Comorbidities <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3" id="collapseExample">
-
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                    <span class="badge rounded-pill bg-danger">Danger</span>
-                </div>
-
-                </p>
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample3">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample3">
-                        Symptoms <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3" id="collapseExample3">
-
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                    <span class="badge rounded-pill bg-warning">Danger</span>
-                </div>
-
-                </p>
-
-
-                <p style="background-color: hsl(0, 0%, 94%);" data-mdb-toggle="collapse"
-                   href="#collapseExample2">
-                    <!-- Buttons trigger collapse -->
-                    <strong role="button" aria-expanded="false" aria-controls="collapseExample2">
-                        Follow-up Meetings <i class="fas fa-chevron-down"></i>
-                    </strong>
-                <div class="collapse mt-3 text-center" id="collapseExample2">
-                    <ul style="list-style: none;  margin: 0; padding: 0px;">
-                        <li style="background: rgb(240, 234, 234); padding:1% ; ">
-                            <div class="row">
-
-                                <div class="col-6">
-                                    <i class="far fa-calendar-alt text-success"></i> 30-May-2021
-                                </div>
-
-                            </div>
-                            <br/>
-                            <div class="row">
-                                <div class="col-6">
-                                    1-2 pm:
-                                </div>
-                                <div class="col-6">
-                                    <a href="#" class="btn btn-primary">Enrol Meet</a>
-                                </div>
-
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <br/>
-                </p>
-            </div>
-        </div>
-    </div>
+    <%})%>
 </div>
 <%- include('common/footer'); %>
 

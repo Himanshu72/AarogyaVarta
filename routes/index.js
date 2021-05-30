@@ -151,7 +151,7 @@ router.post("/reg",async (req,res)=>{
 });
 
 router.get('/udashboard',function(req, res, next) {
-  res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
+  res.render('userdashboard', { title: 'dashboard',data:{auth:true,rec:[],doc:[],meets:[]} });
 });
 
 router.post("/login",async (req,res)=>{
@@ -214,13 +214,43 @@ router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
 
-<<<<<<< HEAD
 
-router.post('/getSession',(req,res)=>{
-  console.log(req.body);
-  res.render('userdashboard', { title: 'dashboard',data:{auth:true} });
+router.post('/getSession',async (req,res)=>{
+  console.log(req.body)
+  let recomanded=[];
+  let data=await db.getSessionbyAge(req.body.age);
+  console.log(data);
+  if(data){
+    data.forEach(ele=>{
+      req.body.comborbidities.forEach(e=>{
+        let c=ele.comborbidities.find(x=>x==e);
+          if(c){
+                if(recomanded.indexOf(ele)== -1)
+                    recomanded.push(ele);
+
+          }
+      })
+      req.body.Symptons.forEach(e=>{
+              let k =ele.Symptons.find(x=>x==e);
+              if(k){
+                if(recomanded.indexOf(ele)== -1)
+                recomanded.push(ele);
+              }
+      });
+    });
+}
+let meets=[];
+if(recomanded.length >0){
+      recomanded.forEach(e=>{
+          meets.push(...e.meet);
+      })
+  }
+  console.log(meets);
+  let fullmeets=await db.getMeets(meets);
+  let docIDs=recomanded.map(e=>e.docID);
+  let docs=await db.getDocByIds(docIDs);
+  console.log(docs);
+  res.render('userdashboard', { title: 'dashboard',data:{auth:true,rec:recomanded,meets:fullmeets,docs:docs} });
 });
 
-=======
->>>>>>> 56b398ca583443d289185348f7e1589b8838bcea
 module.exports = router;

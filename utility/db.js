@@ -88,10 +88,18 @@ mongoose.connect(env.db, {
     async getSessionbyAge(age){
         try{
            let result= await  sessModel.find({age:age});
-          
+          return result;  
         }catch(err){
           throw err;
         }
+    },
+    async getDocByIds(ids){
+      try{  
+      let res=await docModel.find({_id:{$in:ids}});
+          return res;
+      }catch(err){
+        throw err;
+      }
     }
 
       
