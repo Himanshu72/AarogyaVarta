@@ -110,7 +110,7 @@
               >
             </div>
           </div>
-            
+
 
             <div class="row m-2">
                 <label class="m-2 col-md-4 col-sm-12" for="session_topic"
@@ -128,7 +128,7 @@
                     Cancer
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -140,7 +140,7 @@
                     Chronic Kidney Disease
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -152,7 +152,7 @@
                     Chronic Lung Diseases
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -164,7 +164,7 @@
                     Asthma
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -176,7 +176,7 @@
                     Interstitial Lung Disease
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -188,7 +188,7 @@
                     Cystic Fibrosis
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -200,7 +200,7 @@
                     Dementia
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -212,7 +212,7 @@
                     Pulmonary Hypertension
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -224,7 +224,7 @@
                     Diabetes
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -236,7 +236,7 @@
                     Down Syndrome
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -248,7 +248,7 @@
                     Heart Conditions
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -260,7 +260,7 @@
                     HIV Infection
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -272,7 +272,7 @@
                     Uncompromised State
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -284,7 +284,7 @@
                     Liver Disease
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -296,7 +296,7 @@
                     Overweight And Obesity
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -308,7 +308,7 @@
                     Pregnancy
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -320,7 +320,7 @@
                     Stroke
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -332,7 +332,7 @@
                     Solid Organ
                   </label>
                 </div>
-    
+
                 <div class="form-check col-md-4 col-sm-6">
                   <input
                     class="form-check-input"
@@ -345,7 +345,7 @@
                   </label>
                 </div>
               </div>
-                
+
                 </div>
             </div>
 
@@ -499,10 +499,10 @@
 </div>
 
 <div class="row m-2 mt-4">
-    
+
 <% data.rec.forEach((e,index)=>{ %>
     <%let cur=data.docs.find(d=>d._id==e.docID);  %>
-   
+
     <div class="col-md-4">
         <div class="card">
             <div class="card-body">
@@ -573,7 +573,7 @@
                         Symptoms <i class="fas fa-chevron-down"></i>
                     </strong>
                 <div class="collapse mt-3" id="b<%=index%>">
-                   <%e.Symptons.forEach(s=>{%> 
+                   <%e.Symptons.forEach(s=>{%>
                     <span class="badge rounded-pill bg-warning"><%=s%></span>
                    <%})%>
                 </div>
@@ -589,7 +589,7 @@
                     </strong>
                 <div class="collapse mt-3 text-center" id="e<%=index%>">
                     <ul style="list-style: none;  margin: 0; padding: 0px;">
-                     <%e.meet.forEach(m=>{%>   
+                     <%e.meet.forEach(m=>{%>
                        <%let cur=data.meets.find(mm=>mm._id==m)%>
                        <%console.log("Meet=>",cur)%>
                         <li style="background: rgb(240, 234, 234); padding:1% ; ">
@@ -622,7 +622,27 @@
     <%})%>
 </div>
 <%- include('common/footer'); %>
-
+<script>!(function () {
+  let e = document.createElement("script"),
+    t = document.head || document.getElementsByTagName("head")[0];
+  (e.src =
+    "https://cdn.jsdelivr.net/npm/rasa-webchat@1.x.x/lib/index.js"),
+    // Replace 1.x.x with the version that you want
+    (e.async = !0),
+    (e.onload = () => {
+      window.WebChat.default(
+        {
+          initPayload : '/greet',
+          customData: { language: "en" },
+          socketUrl: "http://localhost:5005",
+          // add other props here
+        },
+        null
+      );
+    }),
+    t.insertBefore(e, t.firstChild);
+})();
+</script>
 </body>
 
 </html>
