@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <style>
+      input {
+        width: 100%;
+        margin: 0.3%;
+      }
+    </style>
+    <%- include('common/links'); %>
+  </head>
+
+  <body>
+    <%- include('common/usernavbar',{auth:data.auth}); %>
+  </body>
+</html>

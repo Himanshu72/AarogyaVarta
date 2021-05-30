@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const db=require("../utility/db");
-
+const csv=require("../utility/readcsv");
 const path = require('path');
 
 auth=(req,res,next)=>{
@@ -214,11 +214,17 @@ router.get('/uprofile',function(req, res, next) {
     res.render('uprofile', { title: 'profile',data:{auth:true} });
 });
 
+router.get("/articles",async function(req,res){
+    let datas=await csv.getFileData();
+    console.log(datas);
+res.render('article', { title: 'profile',data:{auth:true} });
+});
 
 router.post('/getSession',async (req,res)=>{
   console.log(req.body)
   let recomanded=[];
   let data=await db.getSessionbyAge(req.body.age);
+  req.session.user=req.body;
   console.log(data);
   if(data){
     data.forEach(ele=>{
