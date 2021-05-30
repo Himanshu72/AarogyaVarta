@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const db=require("../utility/db");
-const csv=require("../utility/readcsv");
+const csv = require('csv-parser')
+const fs = require('fs')
 const path = require('path');
 
 auth=(req,res,next)=>{
@@ -215,9 +216,32 @@ router.get('/uprofile',function(req, res, next) {
 });
 
 router.get("/articles",async function(req,res){
-    let datas=await csv.getFileData();
-    console.log(datas);
-res.render('article', { title: 'profile',data:{auth:true} });
+   
+    let results=[];
+    let me=[];
+      me.push(...req.session.user.comborbidities)
+      me.push(...req.session.user.Symptons)
+      console.log(me);
+    fs.createReadStream('./utility/article.csv')
+    .pipe(csv())
+    .on('data', (data) => {
+      me.forEach(ele=>{
+        if(data.Keywords.includes(ele)){
+              if(results.indexOf(data)==-1)
+                 results.push(data);
+        }
+      })
+      
+     
+      
+    })
+    .on('end', () => {
+        console.log(results);
+
+        res.render('article', { title: 'profile',data:{auth:true,result:results} });
+    });
+     
+
 });
 
 router.post('/getSession',async (req,res)=>{

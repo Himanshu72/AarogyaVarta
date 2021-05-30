@@ -12,6 +12,26 @@
   </head>
 
   <body>
-    <%- include('common/usernavbar',{auth:data.auth}); %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Kewords</th>
+          <th scope="col">Websites</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(data.result.length > 0){%> <%data.result.forEach((ele,index)=>{%>
+        <tr>
+          <th scope="row"><%=index + 1%></th>
+          <td><%=ele.Keywords%></td>
+          <td><a href="<%=ele.Websites%>"><%=ele.Websites%></a>/</td>
+        </tr>
+
+        <%})%> <%}else{%>
+        <h1>Please Fill The Profile First.</h1>
+        <%}%> <%-include('common/usernavbar',{auth:data.auth}); %>
+      </tbody>
+    </table>
   </body>
 </html>
