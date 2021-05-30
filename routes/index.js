@@ -137,7 +137,7 @@ router.post("/reg",async (req,res)=>{
    
 
     req.body.proof=username+"proof";
-    req.body.photo=username+"photo;"
+    req.body.photo=username+"photo"
     
 
    await db.insertDoc(req.body);  
